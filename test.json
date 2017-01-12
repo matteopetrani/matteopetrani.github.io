@@ -1,4 +1,4 @@
 {
-  "ciao": "matteo"
-  "test": "come stai"
-  }
+  "string": "Hello World",
+  "ciao": "come stai"
+}

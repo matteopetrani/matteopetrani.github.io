@@ -39,7 +39,8 @@
   <section class="caccia-section">
     <h3 class="sub-title">Per le nostre avventure</h3>
     <p class="caccia-text">e per solcare nuovi mari con Noah</p>
-    <p class="iban">IT36V0301503200000003541828<br>Matteo Petrani</p>
+    <p class="iban" onclick="copyIBAN('IT36V0301503200000003541828')">IT36V0301503200000003541828<br>Matteo Petrani</p>
+    
   </section>
 
   <!-- Invitation Dress Code Section -->
@@ -49,6 +50,40 @@
       <img src="img/colors.jpg" alt="Colors of the wedding" />
     </div>
   </section>
+
+
+  <script>
+    function copyIBAN(iban) {
+      /* Verifichiamo il supporto di navigator.clipboard */
+      if (navigator.clipboard && window.isSecureContext) {
+        // Metodo moderno
+        navigator.clipboard.writeText(iban)
+          .then(() => {
+            alert('IBAN copiato negli appunti');
+          })
+          .catch(err => {
+            console.error('Errore nella copia dell\'IBAN', err);
+          });
+      } else {
+        // Metodo di fallback per browser meno recenti
+        const textArea = document.createElement('textarea');
+        textArea.value = iban;
+        // Assicuriamoci che il textarea non sia visibile e che sia correttamente aggiunto al DOM
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          alert('IBAN copiato negli appunti!');
+        } catch (err) {
+          console.error('Errore nella copia dell\'IBAN', err);
+        }
+        // Rimuoviamo l'elemento dal DOM
+        document.body.removeChild(textArea);
+      }
+    }
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,205 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* P22 Mackinac Pro – Book (peso normale, stile normale) */
+@font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-Book_25.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* P22 Mackinac Pro – Book Italic (peso normale, stile italic) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-BookItalic_15.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  /* P22 Mackinac Pro – Medium (peso medio, stile normale) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-Medium_26.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* P22 Mackinac Pro – Medium Italic (peso medio, stile italic) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-MedItalic_18.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  /* P22 Mackinac Pro – Bold (peso grassetto, stile normale) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-Bold_16.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* P22 Mackinac Pro – Bold Italic (peso grassetto, stile italic) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-BoldItalic_11.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  /* P22 Mackinac Pro – ExtraBold (peso molto grassetto, stile normale) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-ExtraBold_12.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  /* P22 Mackinac Pro – ExtraBold Italic (peso molto grassetto, stile italic) */
+  @font-face {
+    font-family: 'P22MackinacPro';
+    src: url('fonts/P22MackinacPro-ExBoldItalic_17.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  /* Body */
+  body {
+    font-family: 'P22MackinacPro', Arial, sans-serif;
+    background-color: #3F6578; /* Light background */
+    color: #333333;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #3F6578; /* Some placeholder color */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+  
+  .main-image img {
+    width: 98%;
+    max-width: 500px;
+    height: auto;
+  }
+  
+  /* Date Times Section */
+  .date-times {
+    background-color: #3F6578;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .highlight-text {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #92B6A6; 
+  }
+  
+  .schedule-container {
+    margin-top: 10px;
+    margin-bottom: 80px;
+  }
+  
+  .schedule-item {
+    display: block;
+    justify-content: center;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  .schedule-item .bar{
+    color: #92B6A6
+    display: inline-block;
+    margin: 6px 0;
+  }
+  
+  .schedule-item .time {
+    font-size: 15px;
+    color: #92B6A6; 
+  }
+
+  .schedule-item .label {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    color: #EFE1D1;
+    margin-top: 2px;
+  }
+  
+  .location {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 10px 24px 12px 24px;
+    background: #EFE1D1;
+    color: #333;
+    width: fit-content;
+    text-align: center;
+    display: inline-block;
+    border-radius: 16px;
+  }
+
+  .location img{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+
+  }
+  
+  /* Caccia Il Grano Section */
+  .caccia-section {
+    background-color: #91B5A5;
+    color: #333;
+    text-align: center;
+    padding: 80px 0;
+  }
+  
+  .sub-title {
+    font-size: 20px;
+    margin-bottom: -1px;
+  }
+
+  .caccia-text{
+    font-size: 15px;;
+  }
+  
+  .iban {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Dress Code Section */
+  .dress-code {
+    background-color: #FAFAFA;
+    color: #333333;
+    text-align: center;
+    padding: 80px 0 0 0;
+  }
+  
+  .dress-code .sub-title {
+    margin-bottom: 20px;
+    padding: 0 24px;
+    font-size: 20px;
+    color: #92B6A6;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .brushes-image img {
+    width: 100%;
+    height: auto;
+  }

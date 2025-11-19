@@ -8,12 +8,12 @@ layout: default
             <a href="/">Home</a> / <a href="{{ '/writings/' | relative_url }}">Writings</a> / {{ page.title | escape }}
         </nav>
         <h1 class="post-title">{{ page.title | escape }}</h1>
+        <p class="post-meta post-meta--title">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        </p>
         {% if page.excerpt %}
         <p class="post-excerpt">{{ page.excerpt | markdownify | strip_html }}</p>
         {% endif %}
-        <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-        </p>
     </header>
 
     <div class="post-content">

@@ -16,14 +16,14 @@
 
 @font-face {
   font-family: 'MonoCustom';
-  src: url('../fonts/mono.woff2') format('woff2');
+  src: url('../fonts/mono2.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --bg-color: #ffffff;
+  --bg-color: #faf7f3;
   --text-color: #222222;
   --link-color: #000000;
   --accent-color: #666666;
@@ -50,7 +50,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 19px;
   /* Mobile base size */
   -webkit-font-smoothing: antialiased;
 }
@@ -144,6 +144,11 @@ a:hover {
   margin-bottom: 4px;
 }
 
+.post-meta--title {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
 .post-link {
   font-family: var(--font-family-sans);
   font-size: inherit;
@@ -154,8 +159,8 @@ a:hover {
 .post-excerpt {
   font-size: 1.2em;
   margin-top: 0.2em;
+  margin-bottom: 2em;
   color: var(--accent-color);
-  font-style: italic;
 }
 
 .post-link:hover {
@@ -288,13 +293,13 @@ img {
   --link-color: #111111;
   --accent-color: #555555;
   --footer-color: #333333;
-  --font-family-sans: 'Courier Prime', monospace;
-  --font-family-serif: 'Courier Prime', monospace;
+  --font-family-sans: 'MonoCustom', monospace;
+  --font-family-serif: 'MonoCustom', monospace;
 }
 
 [data-theme="mono"] body {
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 [data-theme="mono"] a {
@@ -317,13 +322,18 @@ img {
   /* Monospace usually looks better with normal weight */
 }
 
+[data-theme="mono"] .site-title {
+  border-bottom: none;
+  text-decoration: none;
+}
+
 [data-theme="mono"] .post-meta {
   font-family: 'MonoCustom', monospace;
   color: #888888;
 }
 
 [data-theme="mono"] .site-nav a {
-  font-family: 'Courier Prime', monospace;
+  font-family: 'MonoCustom', monospace;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,12 +3,12 @@ layout: page
 title: About
 permalink: /about/
 ---
+Nasco in Friuli quando le nubi radioattive di Chernobyl girovagavano per l'Europa, ma sono cresciuto sano, solo un po' stempiato.
 
-Sono Matteo Petrani, uno sviluppatore con base in Italia.
+Cresco in una famiglia tutto sommato sana, dolce, di buoni principi. La vita passata è stata tranquilla, senza scossoni.
 
-Mi occupo di sviluppo web, design di interfacce e accessibilità.
-Credo che il web debba essere leggero, veloce e accessibile a tutti.
+Mi sono innamorato del design thinking, ma sto scoprendo la sua essenza solo da quando ho messo la testa a posto. Ambassador di tutte le invenzioni tecnologiche, da qualche anno **si sta crepando qualcosa**.
 
-Quando non scrivo codice, mi piace leggere, camminare e fare foto.
+Penso tanto, parlo poco: che ruolo ha l'uomo in relazione alla tecnica? Come ci cambia quest'ultima? Che senso ha fare design e vivere come un progettista oggi?
 
-Puoi trovarmi su [GitHub](https://github.com) o scrivermi una [email](mailto:matteo@example.com).
+**Cerco di scoprirlo facendo, vivendo, raccontando.**

@@ -1,0 +1,65 @@
+name: Notify Telegram on new post
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "_posts/**"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send Telegram notifications for new posts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SITE_BASE_URL: ${{ secrets.SITE_BASE_URL }}
+        run: |
+          if [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ] || [ -z "${SITE_BASE_URL}" ]; then
+            echo "Missing TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID or SITE_BASE_URL secrets."
+            exit 1
+          fi
+
+          # Find only newly added posts in this push (status "A")
+          CHANGED_POSTS=$(git diff --name-status "${GITHUB_EVENT_BEFORE:-HEAD^}" "${GITHUB_SHA}" | awk '$1 == "A" {print $2}' | grep '^_posts/' || true)
+
+          if [ -z "$CHANGED_POSTS" ]; then
+            echo "No changed posts found."
+            exit 0
+          fi
+
+          for FILE in $CHANGED_POSTS; do
+            if [ ! -f "$FILE" ]; then
+              continue
+            fi
+
+            # Extract title from front matter (first 'title:' line)
+            TITLE=$(awk '/^title:/ {sub(/^title:[ ]*/, "", $0); print; exit}' "$FILE")
+            [ -z "$TITLE" ] && TITLE="Nuovo post"
+
+            # Derive the permalink from the filename and _config.yml setting:
+            # permalink: /:year/:month/:day/:title/
+            BASENAME=$(basename "$FILE" .md)
+            YEAR=$(echo "$BASENAME" | cut -d'-' -f1)
+            MONTH=$(echo "$BASENAME" | cut -d'-' -f2)
+            DAY=$(echo "$BASENAME" | cut -d'-' -f3)
+            SLUG=$(echo "$BASENAME" | cut -d'-' -f4-)
+
+            POST_PATH="/${YEAR}/${MONTH}/${DAY}/${SLUG}/"
+            POST_URL="${SITE_BASE_URL%/}${POST_PATH}"
+
+            TEXT="📬 Nuovo post pubblicato:\n${TITLE}\n${POST_URL}"
+
+            echo "Sending notification for $FILE -> $POST_URL"
+
+            curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d "chat_id=${TELEGRAM_CHAT_ID}" \
+              -d "text=${TEXT}" \
+              -d "parse_mode=HTML"
+          done

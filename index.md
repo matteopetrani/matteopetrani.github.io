@@ -2,7 +2,7 @@
 layout: home
 title: Home
 ---
-[Freelance designer](https://www.linkedin.com/in/matteopetrani/) & padre.
+[Product designer, CRO specialist](https://www.linkedin.com/in/matteopetrani/) & padre.
 
 Lavoro come UX designer dal 2012. Ho iniziato in [H-Farm](https://www.h-farm.com/ithttps:/), poi in [Sketchin](https://sketchin.com/https:/) e oggi collaboro come freelance con aziende di diverse dimensioni. Nel tempo ho ricoperto l’intera filiera del design digitale, dalla UI alla direzione tecnologica.
 

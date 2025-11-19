@@ -3,6 +3,10 @@ layout: page
 title: About
 permalink: /about/
 ---
+*[Cerchi il mio cv?](https://www.linkedin.com/in/matteopetrani/https:/)*
+
+-
+
 Nasco in Friuli quando le nubi radioattive di Chernobyl girovagavano per l'Europa, ma sono cresciuto sano, solo un po' stempiato.
 
 Cresco in una famiglia tutto sommato sana, dolce, di buoni principi. La vita passata è stata tranquilla, senza scossoni.

@@ -20,8 +20,6 @@ Mi è sempre piaciuta la strofa di Willie Peyote: "Vogliamo tutti risparmiare te
 
 Partendo da questi presupposti ho iniziato a scrivere un piccolo manifesto. È una bozza aperta a feedback e suggerimenti; intano vi condivido un WIP.
 
-Leggi il manifesto
-
 Son solo 4 punti per ora, conto di estenderlo per essere più inclusivo di altri aspetti della vita.
 
 I 4 principi possono essere riassunti così:
@@ -47,8 +45,3 @@ Cosa sto leggendo
 
  - La mente del bambino - Maria Montessori
  - Oltre l'invisibile - Federico Faggin
-
-Link belli
-
- - Il babysitter di Paolo Ruffini: interviste a bambini per ricordarci di come eravamo un tempo
- - Fixing the internet: uno scatenato Jaron Lanier ci parla del futuro di internet

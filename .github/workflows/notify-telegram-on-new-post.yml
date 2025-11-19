@@ -26,8 +26,9 @@ jobs:
             exit 1
           fi
 
-          # Find only newly added posts in this push (status "A")
-          CHANGED_POSTS=$(git diff --name-status "${GITHUB_EVENT_BEFORE:-HEAD^}" "${GITHUB_SHA}" | awk '$1 == "A" {print $2}' | grep '^_posts/' || true)
+          # Find only newly added posts in the latest commit (status "A")
+          # Using git show avoids issues with missing HEAD^ on first pushes.
+          CHANGED_POSTS=$(git show --name-status --pretty="" "${GITHUB_SHA}" | awk '$1 == "A" {print $2}' | grep '^_posts/' || true)
 
           if [ -z "$CHANGED_POSTS" ]; then
             echo "No changed posts found."

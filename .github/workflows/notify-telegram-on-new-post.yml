@@ -88,7 +88,10 @@ jobs:
             # Build HTML message:
             # Titolo in grassetto, excerpt come quote (testuale), link cliccabile "Leggi"
             # Si usano newline reali invece di \n e solo tag HTML supportati da Telegram.
-            TEXT="<b>${TITLE_ESCAPED}</b>"$'\n'"&gt; ${EXCERPT_ESCAPED}"$'\n'"<a href=\"${POST_URL}\">Leggi</a>"
+            TEXT=$(printf '<b>%s</b>\n&gt; %s\n<a href="%s">Leggi</a>' \
+              "${TITLE_ESCAPED}" \
+              "${EXCERPT_ESCAPED}" \
+              "${POST_URL}")
 
             echo "Sending notification for $FILE -> $POST_URL"
 

@@ -64,10 +64,10 @@ Perderci per ritrovarci. È l’unico miracolo disponibile. E se per riuscirci s
 
 Cosa sto leggendo
 
- - 28 respiri per cambiare vita, appena iniziato... vediamo!
+ - [28 respiri per cambiare vita](https://www.goodreads.com/book/show/125846781-28-respiri-per-cambiare-vita-come-raggiungere-una-mente-illuminata) - Daniel Lumera
 
 Link belli
 
- - la newsletter di Giulio
+ - [la newsletter di Giulio](https://cosasposta.substack.com/)
 
 e basta... in queste settimane son stato parecchio offline :)

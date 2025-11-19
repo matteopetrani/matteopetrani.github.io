@@ -51,8 +51,8 @@ E dunque, quale miglior momento per mettere il naso fuori da questa corrente che
 
 Cosa sto leggendo
 
- - Il codice dei tarocchi di Carlo Bozzello (bel cognome, chissà se gli piace la barca a vela) per riscoprire il senso di simboli e sincronicità
+ - [Il codice dei tarocchi](https://www.goodreads.com/book/show/26877625-il-codice-dei-tarocchi?ref=nav_sb_ss_1_22) di Carlo Bozzello (bel cognome, chissà se gli piace la barca a vela) per riscoprire il senso di simboli e sincronicità
 
 Cosa sto ascoltando
 
- - The filament di Andrea Bariselli, podcast superlativo che parla di archetipi e intervista persone deliziose
+ - [The filament](https://www.youtube.com/playlist?list=PLiEYdT3u015uPhuSMAaKnkMtG1VuzKz0p) di Andrea Bariselli, podcast superlativo che parla di archetipi e intervista persone deliziose

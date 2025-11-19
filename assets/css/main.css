@@ -39,6 +39,13 @@
     --link-color: #ffffff;
     --accent-color: #aaaaaa;
   }
+
+  [data-theme="mono"] {
+    --bg-color: #111111;
+    --text-color: #e0e0e0;
+    --link-color: #e0e0e0;
+    --accent-color: #777777;
+  }
 }
 
 body {

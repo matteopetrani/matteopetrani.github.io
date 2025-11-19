@@ -70,6 +70,10 @@ jobs:
 
             [ -z "$EXCERPT" ] && EXCERPT="Nuovo post sul blog."
 
+            # Escape HTML special chars for safe HTML mode
+            TITLE_ESCAPED=$(printf '%s' "$TITLE" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+            EXCERPT_ESCAPED=$(printf '%s' "$EXCERPT" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+
             # Derive the permalink from the filename and _config.yml setting:
             # permalink: /:year/:month/:day/:title/
             BASENAME=$(basename "$FILE" .md)
@@ -82,8 +86,11 @@ jobs:
             POST_URL="${SITE_BASE_URL%/}${POST_PATH}"
 
             # Build HTML message:
-            # Titolo in grassetto, excerpt come quote, link cliccabile "Leggi"
-            TEXT="<b>${TITLE}</b><br><blockquote>${EXCERPT}</blockquote><a href=\"${POST_URL}\">Leggi</a>"
+            # Titolo in grassetto, excerpt come quote (testuale), link cliccabile "Leggi"
+            # Si usano newline reali invece di \n e solo tag HTML supportati da Telegram.
+            TEXT="<b>${TITLE_ESCAPED}</b>
+&gt; ${EXCERPT_ESCAPED}
+<a href=\"${POST_URL}\">Leggi</a>"
 
             echo "Sending notification for $FILE -> $POST_URL"
 

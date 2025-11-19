@@ -22,8 +22,9 @@
     <div class="wrapper">
       <a class="site-title" href="/">{{ site.title | escape }}</a>
       <nav class="site-nav">
-        <a href="/about/">About</a>
-        <a href="/now/">Now</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/now/' | relative_url }}">Now</a>
+        <a href="{{ '/writings/' | relative_url }}">Writings</a>
       </nav>
     </div>
   </header>

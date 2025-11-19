@@ -7,8 +7,6 @@ author: "Matteo Petrani"
 
 Tra campagne CRO, call con fornitori, startup e idee per SaaS, perdo pezzi nell'attesa di Noah. Il corpo chiede di rallentare, la mente spinge per "portarsi avanti". Torno in equilibrio quando mi ricordo di vivere.
 
-Galline erba e baci N0060:00/456.1706671×
-
 I colori diventano più caldi, e gli occhi si rilassano. È la golden hour? Un bel tramonto? Ma valà! È il Night Shift del Mac: mi ricorda che la giornata sta volgendo al termine e le galline sono ancora fuori nell'orto.
 
 Saluto alcuni colleghi su Meet, altri su Slack, infine, i più sfortunati che usano ancora Teams. Tutti mi invidiano un po', le galline sono un asset pregiato e le uova felici un lusso moderno. Scendo da Ulisse, la barca dove viviamo, e prendo la bicicletta. Alla mia destra lascio il mare e in 5 minuti sono nell'orto.

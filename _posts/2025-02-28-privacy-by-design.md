@@ -5,7 +5,7 @@ date: 2025-02-28 10:21:14 +0000
 author: "Matteo Petrani"
 ---
 
-"Non ho niente da nascondere!". Eppure sappiamo benissimo la sensazione di fastidio quando ci sentiamo nudi di fronte ad un algoritmo.
+Non ho niente da nascondere!. Eppure sappiamo benissimo la sensazione di fastidio quando ci sentiamo nudi di fronte ad un algoritmo.
 
 Il tema della privacy è tanto difficile da analizzare quanto polarizzante. C'è chi si batte per la trasparenza totale e chi vorrebbe scomparire dal web. Qualcuno è diventato una media house per necessità o per vanità, altri invece chattano su Signal. E poi ci sono i peggiori di tutti: i genitori wannabe Ferragni, quelli che si sentono furbi e spammano foto dei figli con un'emoji schiaffata in faccia.
 

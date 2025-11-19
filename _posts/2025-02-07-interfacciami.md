@@ -3,6 +3,7 @@ layout: post
 title: "N°003 - Interfacciami"
 date: 2025-02-07 07:24:01 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Questa settimana ho ripreso a lavorare con BlackPep e Intarget nel ruolo di Head Of CRO. Sono già 8 mesi che collaboro con loro per aumentare la conversione degli e-commerce, prevalentemente nei settori luxury & fashion. Servirebbe un post a parte per raccontare tutto quello che sto imparando.

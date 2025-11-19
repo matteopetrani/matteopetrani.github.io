@@ -3,6 +3,7 @@ layout: post
 title: "Design for time"
 date: 2025-02-10 07:30:40 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 È giusto convincersi che il tempo passato davanti ad un Mac sia "giusto"? È un po' che mi interrogo su questo aspetto, specialmente in queste settimane che ho ripreso a "produrre". Cerco di dare una forma a questo tempo, un proposito. Fuori intanto, la natura vive il suo corso.

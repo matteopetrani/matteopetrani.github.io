@@ -23,6 +23,45 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           SITE_BASE_URL: ${{ secrets.SITE_BASE_URL }}
         run: |
+          first_words() {
+            local file="$1"
+            local limit="${2:-50}"
+            local body
+            body=$(awk '
+              BEGIN { front=0 }
+              /^---[ \t]*$/ {
+                front++
+                next
+              }
+              {
+                if (front >= 2) { print }
+              }
+            ' "$file")
+
+            body=$(printf '%s' "$body" | sed 's/{%[^%]*%}//g' | tr '\n' ' ')
+            body=$(printf '%s' "$body" | sed 's/[[:space:]]\+/ /g; s/^ //; s/ $//')
+
+            if [ -z "$body" ]; then
+              printf 'Nuovo post sul blog...'
+              return
+            fi
+
+            local snippet
+            snippet=$(printf '%s\n' "$body" | awk -v limit="$limit" '{
+              out=""
+              for (i = 1; i <= NF && i <= limit; i++) {
+                out = out (i == 1 ? "" : " ") $i
+              }
+              print out
+            }')
+
+            if [ -z "$snippet" ]; then
+              printf 'Nuovo post sul blog...'
+            else
+              printf '%s...' "$snippet"
+            fi
+          }
+
           if [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ] || [ -z "${SITE_BASE_URL}" ]; then
             echo "Missing TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID or SITE_BASE_URL secrets."
             exit 1
@@ -54,35 +93,24 @@ jobs:
             TITLE=$(awk '/^title:/ {sub(/^title:[ ]*/, "", $0); print; exit}' "$FILE")
             [ -z "$TITLE" ] && TITLE="Nuovo post"
 
-            # Extract excerpt:
-            # 1) Try "excerpt:" in front matter
-            # 2) Otherwise, first non-empty line after front matter
-            EXCERPT=$(awk '
-              /^excerpt:/ {sub(/^excerpt:[ ]*/, "", $0); print; found=1; exit}
+            # Extract telegram text from front matter.
+            TELEGRAM_TEXT=$(awk '
+              /^telegram:/ {
+                sub(/^telegram:[ ]*/, "", $0);
+                gsub(/^"/, "", $0);
+                gsub(/"$/, "", $0);
+                print;
+                exit;
+              }
             ' "$FILE")
 
-            if [ -z "$EXCERPT" ]; then
-              EXCERPT=$(awk '
-                BEGIN { in_front_matter=0; }
-                /^---[ \t]*$/ {
-                  if (in_front_matter==0) { in_front_matter=1; next }
-                  if (in_front_matter==1) { in_front_matter=2; next }
-                }
-                {
-                  if (in_front_matter==2 && $0 !~ /^[[:space:]]*$/) {
-                    gsub(/^[[:space:]]+|[[:space:]]+$/, "", $0);
-                    print $0;
-                    exit;
-                  }
-                }
-              ' "$FILE")
+            if [ -z "$TELEGRAM_TEXT" ]; then
+              TELEGRAM_TEXT=$(first_words "$FILE" 50)
             fi
-
-            [ -z "$EXCERPT" ] && EXCERPT="Nuovo post sul blog."
 
             # Escape HTML special chars for safe HTML mode
             TITLE_ESCAPED=$(printf '%s' "$TITLE" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
-            EXCERPT_ESCAPED=$(printf '%s' "$EXCERPT" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+            TELEGRAM_ESCAPED=$(printf '%s' "$TELEGRAM_TEXT" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
 
             # Derive the permalink from the filename and _config.yml setting:
             # permalink: /:year/:month/:day/:title/
@@ -98,9 +126,9 @@ jobs:
             # Build HTML message:
             # Titolo in grassetto, excerpt come quote (testuale), link cliccabile "Leggi"
             # Si usano newline reali invece di \n e solo tag HTML supportati da Telegram.
-            TEXT=$(printf '<b>%s</b>\n&gt; %s\n<a href="%s">Leggi</a>' \
+            TEXT=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Leggi</a>' \
               "${TITLE_ESCAPED}" \
-              "${EXCERPT_ESCAPED}" \
+              "${TELEGRAM_ESCAPED}" \
               "${POST_URL}")
 
             echo "Sending notification for $FILE -> $POST_URL"

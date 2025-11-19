@@ -3,6 +3,7 @@ layout: post
 title: "N°011 - Psiche e Techne"
 date: 2025-05-10 06:38:18 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 È un po' che non scrivo, non c'erano parole sufficienti per comporre dei paragrafi di senso. La vita mi affascina, mi tiene incollato ad essa, lontano da tastiere, schermi e feeds.

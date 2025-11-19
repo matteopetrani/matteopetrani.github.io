@@ -11,7 +11,7 @@ layout: default
         <p class="post-meta post-meta--title">
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
         </p>
-        {% if page.excerpt %}
+        {% if page.excerpt != blank %}
         <p class="post-excerpt">{{ page.excerpt | markdownify | strip_html }}</p>
         {% endif %}
     </header>

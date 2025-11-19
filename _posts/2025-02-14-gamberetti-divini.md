@@ -3,6 +3,7 @@ layout: post
 title: "N°004 - Gamberetti divini"
 date: 2025-02-14 10:00:21 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Settimana poco “fisica” e molto “mentale”: innumerevoli ragionamenti sui dati, sull’ottimizzazione degli e-commerce e, ovviamente, pensieri strategici su come e perché vendere AI. Ma soprattutto, mille idee di SaaS da sviluppare.

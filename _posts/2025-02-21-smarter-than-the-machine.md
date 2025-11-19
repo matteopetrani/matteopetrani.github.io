@@ -3,6 +3,7 @@ layout: post
 title: "N°005 - Smarter than the machine"
 date: 2025-02-21 06:19:52 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Un imprenditore mi ha detto: "Voglio lavorare per migliorare il mondo, perché ci sia più amore e vitalità". Gli ho creduto.

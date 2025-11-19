@@ -3,6 +3,7 @@ layout: post
 title: "N°001 - I progettisti sono fatti per restare"
 date: 2025-01-29 18:32:33 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Si salpa! Primo post, confezionato prima di andare a pranzo dalla nonna.

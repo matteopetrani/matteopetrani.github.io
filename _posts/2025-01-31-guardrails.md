@@ -3,6 +3,7 @@ layout: post
 title: "N°002 - Guardrails"
 date: 2025-01-31 14:11:18 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Conosciamo benissimo la storia di Piazza Tienanmen. Anche Deepseek, tra i suoi vettori, detiene quel sapere.

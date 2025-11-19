@@ -3,6 +3,7 @@ layout: post
 title: "N°010 - Ho sempre ragione"
 date: 2025-04-20 06:18:01 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Questa settimana torniamo a parlare di AI; mi nascono molti interrogativi quando guardo Noah e penso al suo futuro.

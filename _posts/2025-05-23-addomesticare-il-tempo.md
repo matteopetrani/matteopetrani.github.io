@@ -3,6 +3,7 @@ layout: post
 title: "N°012 - Addomesticare il tempo"
 date: 2025-05-23 06:07:11 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Le settimane scorrono, ahimè, veloci. Ma dense. Molto dense. Che ieri sembra un mese fa, che settimana scorsa è l'anno scorso. Lavoro tanto, vivo tanto.

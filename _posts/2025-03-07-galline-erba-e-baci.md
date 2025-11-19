@@ -3,6 +3,7 @@ layout: post
 title: "N°006 - Galline, erba e baci"
 date: 2025-03-07 07:51:51 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Tra campagne CRO, call con fornitori, startup e idee per SaaS, perdo pezzi nell'attesa di Noah. Il corpo chiede di rallentare, la mente spinge per "portarsi avanti". Torno in equilibrio quando mi ricordo di vivere.

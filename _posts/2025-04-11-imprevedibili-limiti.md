@@ -3,6 +3,7 @@ layout: post
 title: "N°009 - Imprevedibili limiti"
 date: 2025-04-11 12:53:28 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 Son stato assente due settimane, "Noah" culpa. Non vedevo l'ora di scrivere nuovamente, in questo momento così denso e significativo. Questo è un post alla James Joyce, portate pazienza e divertitevi ad immedesimarvi in un neo papà.

@@ -3,6 +3,7 @@ layout: post
 title: "N°013 - Life Stonks e ATH"
 date: 2025-06-12 06:23:39 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 È un po' che non scrivo. Le due ore abbondanti per partorire un pezzo sono state volutamente impegnate in famiglia, ad osservarci e sorriderci. Può capitare :)

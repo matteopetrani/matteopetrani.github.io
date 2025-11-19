@@ -3,6 +3,7 @@ layout: post
 title: "N°008 - La bussola senza nord"
 date: 2025-03-21 14:21:18 +0000
 author: "Matteo Petrani"
+telegram: ""
 ---
 
 In attesa che Noah venga a governare la sua arca, festeggio la mia prima festa del papà, tra meditazioni mattutine e preghiere serali.

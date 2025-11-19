@@ -44,6 +44,32 @@ jobs:
             TITLE=$(awk '/^title:/ {sub(/^title:[ ]*/, "", $0); print; exit}' "$FILE")
             [ -z "$TITLE" ] && TITLE="Nuovo post"
 
+            # Extract excerpt:
+            # 1) Try "excerpt:" in front matter
+            # 2) Otherwise, first non-empty line after front matter
+            EXCERPT=$(awk '
+              /^excerpt:/ {sub(/^excerpt:[ ]*/, "", $0); print; found=1; exit}
+            ' "$FILE")
+
+            if [ -z "$EXCERPT" ]; then
+              EXCERPT=$(awk '
+                BEGIN { in_front_matter=0; }
+                /^---[ \t]*$/ {
+                  if (in_front_matter==0) { in_front_matter=1; next }
+                  if (in_front_matter==1) { in_front_matter=2; next }
+                }
+                {
+                  if (in_front_matter==2 && $0 !~ /^[[:space:]]*$/) {
+                    gsub(/^[[:space:]]+|[[:space:]]+$/, "", $0);
+                    print $0;
+                    exit;
+                  }
+                }
+              ' "$FILE")
+            fi
+
+            [ -z "$EXCERPT" ] && EXCERPT="Nuovo post sul blog."
+
             # Derive the permalink from the filename and _config.yml setting:
             # permalink: /:year/:month/:day/:title/
             BASENAME=$(basename "$FILE" .md)
@@ -55,7 +81,9 @@ jobs:
             POST_PATH="/${YEAR}/${MONTH}/${DAY}/${SLUG}/"
             POST_URL="${SITE_BASE_URL%/}${POST_PATH}"
 
-            TEXT="📬 Nuovo post pubblicato:\n${TITLE}\n${POST_URL}"
+            # Build HTML message:
+            # Titolo in grassetto, excerpt come quote, link cliccabile "Leggi"
+            TEXT="<b>${TITLE}</b><br><blockquote>${EXCERPT}</blockquote><a href=\"${POST_URL}\">Leggi</a>"
 
             echo "Sending notification for $FILE -> $POST_URL"
 

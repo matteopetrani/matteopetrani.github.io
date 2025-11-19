@@ -1,0 +1,15 @@
+title: Matteo Petrani
+email: matteo@example.com
+description: >-
+  Minimalist blog & portfolio.
+baseurl: ""
+url: ""
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+
+include:
+  - .well-known

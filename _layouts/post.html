@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="post">
+
+    <header class="post-header">
+        <nav class="breadcrumbs">
+            <a href="/">Home</a> / {{ page.title | escape }}
+        </nav>
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        </p>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+</article>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="page">
+
+    <header class="page-header">
+        <nav class="breadcrumbs">
+            <a href="/">Home</a> / {{ page.title | escape }}
+        </nav>
+        <h1 class="page-title">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="page-content">
+        {{ content }}
+    </div>
+
+</article>

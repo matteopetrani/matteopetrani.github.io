@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "E se...?"
-date: 2025-11-19 09:00:00 +0100
-categories: thoughts
+title: "N°015 - Speciazioni"
+date: 2025-08-08 15:42:36 +0000
+author: "Matteo Petrani"
 ---
 
 Settimana in tema con i pensieri che vado a raccontarvi. Si è parlato di futuro, di nuove iniziative, di creare ma anche di rallentare e ritrovare un ritmo.
@@ -28,28 +28,25 @@ Bastano due parole, però, per smontare tutto: «E se…?»
 È una formula magica che crea un vuoto davanti a noi. Il pieno è noto, il vuoto no. Con il vuoto nasce smarrimento, timore, ma anche apertura. Nascono nuovi programmi, senza orizzonti ancora visibili, che lasciano una tela bianca all’immaginazione e alla creazione. Aprire le porte a un futuro diverso è una forma di generosità verso la specie: un dono, una novità.
 
 E se… fossi stupido? Stupidus, in latino, viene da stupere: essere intontiti, raggelati. Diciamo «chi sta fermo», in sostanza: chi smette di farsi domande.
-
-> «Chi cercherà di salvare la propria vita, la perderà; ma chi la perderà, la salverà» (Lc 17,33).
-
-Io la parafraso così: chi cerca di salvare la propria psiche, la perde; chi la perde, la genera.
+«Chi cercherà di salvare la propria vita, la perderà; ma chi la perderà, la salverà» (Lc 17,33). Io la parafraso così: chi cerca di salvare la propria psiche, la perde; chi la perde, la genera.
 
 Psiché in greco significa anima, vita, mente. Lo stupido vive in base a ciò che sa; di conseguenza modella la mente su certezze. Una mente così non può che limitare l’animo, la nostra idea più alta di noi stessi.
 
 Chi sa, è perduto. Chi sa, assegna valore alle cose. Chi sa, dice:
-*   il mondo
-*   la verità
-*   il lavoro
-*   il Dio
-*   la vita
-*   il denaro.
+il mondo
+la verità
+il lavoro
+il Dio
+la vita
+il denaro.
 
 Invece, gli «E se…?» dicono:
-*   un mondo
-*   una verità
-*   un lavoro
-*   un Dio
-*   una vita
-*   …
+un mondo
+una verità
+un lavoro
+un Dio
+una vita
+…
 
 «Il» è stabilità; «un» è dinamica. È mettere alla prova ciò che fino a oggi sapevamo.
 E ancora più forte: Io vs un Io.
@@ -63,13 +60,12 @@ Solo negli errori siamo noi stessi; solo negli errori abbiamo l’occasione di c
 
 Perderci per ritrovarci. È l’unico miracolo disponibile. E se per riuscirci servisse custodire il nostro essere marziani, quel piccolo sfasamento dall'ordinario che apre la porta al nuovo?
 
----
+Cosa sto leggendo
 
-### Cosa sto leggendo
+ - 28 respiri per cambiare vita, appena iniziato... vediamo!
 
-*   28 respiri per cambiare vita, appena iniziato... vediamo!
+Link belli
 
-### Link belli
+ - la newsletter di Giulio
 
-*   la newsletter di Giulio
-*   e basta... in queste settimane son stato parecchio offline :)
+e basta... in queste settimane son stato parecchio offline :)

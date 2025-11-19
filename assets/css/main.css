@@ -28,6 +28,7 @@
   --link-color: #000000;
   --accent-color: #666666;
   --footer-color: #444444;
+  --highlight-color: #eae5dc;
   --font-family-sans: 'GaramondPro', serif;
   --font-family-serif: 'TitlesCustom', serif;
   --spacing-unit: 30px;
@@ -40,6 +41,7 @@
     --link-color: #ffffff;
     --accent-color: #aaaaaa;
     --footer-color: #dddddd;
+    --highlight-color: #44413a;
   }
 }
 
@@ -241,7 +243,15 @@ blockquote {
   color: var(--accent-color);
 }
 
-html[data-theme="std"] .post-content > p:first-of-type::first-letter {
+strong {
+  font-weight: inherit;
+  background-image: linear-gradient(0, var(--highlight-color), var(--highlight-color));
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+}
+
+html[data-theme="serif"] .post-content > p:first-of-type::first-letter {
   font-size: 3.5em;
   float: left;
   line-height: 0.5;
@@ -293,6 +303,7 @@ img {
   --link-color: #111111;
   --accent-color: #555555;
   --footer-color: #333333;
+  --highlight-color: #cfcfcf;
   --font-family-sans: 'MonoCustom', monospace;
   --font-family-serif: 'MonoCustom', monospace;
 }
@@ -343,6 +354,7 @@ img {
     --link-color: #e0e0e0;
     --accent-color: #777777;
     --footer-color: #cccccc;
+    --highlight-color: #555555;
   }
 }
 

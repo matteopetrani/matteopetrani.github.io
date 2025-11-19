@@ -40,14 +40,14 @@
     <div class="wrapper">
       <p>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</p>
       <div class="theme-switcher">
-        <span>Theme:</span> <button id="theme-std" class="theme-btn active">serif</button> | <button id="theme-mono"
+        <span>Theme:</span> <button id="theme-serif" class="theme-btn active">serif</button> | <button id="theme-mono"
           class="theme-btn">mono</button>
       </div>
     </div>
   </footer>
 
   <script>
-    const btnStd = document.getElementById('theme-std');
+    const btnSerif = document.getElementById('theme-serif');
     const btnMono = document.getElementById('theme-mono');
     const html = document.documentElement;
 
@@ -57,18 +57,19 @@
 
       if (theme === 'mono') {
         btnMono.classList.add('active');
-        btnStd.classList.remove('active');
+        btnSerif.classList.remove('active');
       } else {
-        btnStd.classList.add('active');
+        btnSerif.classList.add('active');
         btnMono.classList.remove('active');
       }
     }
 
     // Check saved theme
-    const savedTheme = localStorage.getItem('theme') || 'std';
-    setTheme(savedTheme);
+    const storedTheme = localStorage.getItem('theme');
+    const initialTheme = storedTheme === 'mono' ? 'mono' : 'serif';
+    setTheme(initialTheme);
 
-    btnStd.addEventListener('click', () => setTheme('std'));
+    btnSerif.addEventListener('click', () => setTheme('serif'));
     btnMono.addEventListener('click', () => setTheme('mono'));
   </script>
 

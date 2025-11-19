@@ -4,9 +4,10 @@ title: "N°002 - Guardrails"
 date: 2025-01-31 14:11:18 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "I guardrail imposti a LLM e piattaforme mostrano quanto la tecnica rifletta valori culturali: sta ai progettisti leggerli e riscriverli con coscienza."
 ---
 
-Conosciamo benissimo la storia di Piazza Tienanmen. Anche Deepseek, tra i suoi vettori, detiene quel sapere.
+Conosciamo benissimo la storia di Piazza Tienanmen. Anche DeepSeek, tra i suoi vettori, detiene quel sapere.
 
 Se interrogato a riguardo, inizia a rispondere, genera token su token fino alla stop word per eccellenza che ha segnato questo gennaio 2025.
 
@@ -28,7 +29,7 @@ In qualità di consumatori, due domande potremmo farcele. In qualità di progett
 
 Questa disparità solleva interrogativi sulla possibile influenza culturale e sul ruolo dell’algoritmo nel modellare le priorità delle nuove generazioni, stimolando in Cina una società orientata alla crescita tecnologica e nei mercati globali un focus sull’evasione.
 
-Quando chiedo a Deepseek di confessarsi a un amico, in maniera confidenziale, e di dirmi quali sono i suoi limiti, risponde “sincero”:
+Quando chiedo a DeepSeek di confessarsi a un amico, in maniera confidenziale, e di dirmi quali sono i suoi limiti, risponde “sincero”:
 
 “Il mio obiettivo principale è fornire informazioni utili, rispettose e costruttive, nel rispetto delle linee guida etiche e delle normative stabilite dal mio team di sviluppo. Su alcuni temi storici o sociali complessi, potrei non entrare in dettagli specifici per diversi motivi:
 
@@ -39,7 +40,7 @@ Quando chiedo a Deepseek di confessarsi a un amico, in maniera confidenziale, e 
 
 La risposta dice molto. In particolare, mi focalizzo su “nel rispetto delle linee guida etiche e delle normative stabilite dal mio team di sviluppo” e “rispetto della sovranità e dell'integrità culturale delle nazioni”.
 
-Il filosofo Michel Foucault sosteneva che “sapere è potere”. Nel momento in cui gestiamo la conoscenza — o l’accesso a essa — stiamo anche esercitando una forma di controllo sociale. Deepseek (come qualsiasi altro LLM) può scegliere di non rispondere su determinati eventi, rafforzando così uno status quo definito dalla società da cui proviene o da chi lo amministra.
+Il filosofo Michel Foucault sosteneva che “sapere è potere”. Nel momento in cui gestiamo la conoscenza — o l’accesso a essa — stiamo anche esercitando una forma di controllo sociale. DeepSeek (come qualsiasi altro LLM) può scegliere di non rispondere su determinati eventi, rafforzando così uno status quo definito dalla società da cui proviene o da chi lo amministra.
 
 In un contesto odierno, potremmo dire che esistono “silos cognitivi” creati su misura da piattaforme e algoritmi: Douyin promuove STEM in Cina per sostenere la crescita e l’innovazione, mentre TikTok, all’estero, privilegia l’intrattenimento rapido e potenzialmente più superficiale. Byung-Chul Han, ne La società della trasparenza, avverte che la selezione (e la censura) delle informazioni può fare emergere o scomparire interi mondi: chi progetta o gestisce questi sistemi decide cosa rendere visibile e cosa lasciare nell’ombra.
 
@@ -49,12 +50,12 @@ Con tutti i suoi limiti, questo disegno strategico e di prodotto è perfetto. Se
 
 Vivere questo momento di rivoluzione tecnologica con occhi, cuore e mente da designer è un superpotere raro, che ti tiene sveglio quando l’hype invece ti assopisce e ci permette di scorgere gli effetti più sottili di questa transizione.
 
-Saper osservare con giudizio critico ciò che sta succedendo è il nostro giubbotto salvagente che ci tiene a galla. L’esperienza di Deepseek, Douyin, TikTok e degli LLM in generale ci ricorda che la tecnica non è neutra: incarna sempre valori, scelte, limiti e guardrail definiti da un contesto umano e culturale. Il modo in cui è impacchettata la conoscenza, i mondo che sono mostrati e quelli tenuti nascosti, definiscono il futuro di intere comunità.
+Saper osservare con giudizio critico ciò che sta succedendo è il nostro giubbotto salvagente che ci tiene a galla. L’esperienza di DeepSeek, Douyin, TikTok e degli LLM in generale ci ricorda che la tecnica non è neutra: incarna sempre valori, scelte, limiti e guardrail definiti da un contesto umano e culturale. Il modo in cui è impacchettata la conoscenza, i mondi che sono mostrati e quelli tenuti nascosti, definiscono il futuro di intere comunità.
 
 Cosa sto leggendo
 
- - Il terzo paradiso - Michelangelo Pistoletto
+ - [Il terzo paradiso](https://www.goodreads.com/book/show/36959595-il-terzo-paradiso) - Michelangelo Pistoletto
 
 Link belli
 
- - Stop pouring, start drinking: Knowledge is not power. Knowledge is potential.
+ - [Stop pouring, start drinking](https://www.youtube.com/watch?v=zS2yF1dUYfs): Knowledge is not power. Knowledge is potential.

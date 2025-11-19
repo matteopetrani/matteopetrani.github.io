@@ -4,6 +4,7 @@ title: "N°012 - Addomesticare il tempo"
 date: 2025-05-23 06:07:11 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "L'unica valuta non riproducibile è il tempo: addomesticarlo significa scegliere di fermarsi, pensare e dare valore a ogni istante."
 ---
 
 Le settimane scorrono, ahimè, veloci. Ma dense. Molto dense. Che ieri sembra un mese fa, che settimana scorsa è l'anno scorso. Lavoro tanto, vivo tanto.

@@ -4,11 +4,10 @@ title: "N°005 - Smarter than the machine"
 date: 2025-02-21 06:19:52 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Restiamo rilevanti se teniamo l'AI su un binario parallelo al nostro, coltivando pensiero critico, creatività, socialità ed etica."
 ---
 
 Un imprenditore mi ha detto: "Voglio lavorare per migliorare il mondo, perché ci sia più amore e vitalità". Gli ho creduto.
-
-Smarter than the machine N0050:00/764.9066671×
 
 Chat di lavoro, postano un link di una demo di Copilot: un dev replica la UI di Threads chattando con VSCode. Per mia nonna che mi legge: tizio progetta un "sito" parlando con il computer.
 
@@ -31,7 +30,7 @@ Ma allora: chi deve seriamente preoccuparsi per la propria carriera? Chi si salv
 
 Avevo già iniziato una riflessione sul tema, raccontando del perché i progettisti possono dormire notti tranquille; ora andiamo oltre.
 
-I progettisti sono fatti per restare - N°001Si salpa! Primo post, confezionato prima di andare a pranzo dalla nonna. Se mi avete sentito parlare di design negli ultimi anni, saprete che ripeto spesso una cosa: qualsiasi piattaforma digitale erogata tramite pixel è ormai una commodity 🤷‍♂️ . Lo sono gli e-commerce che aprono come funghi, le app che replicanoSottocoperta (Matteo Petrani)Matteo Petrani
+[I progettisti sono fatti per restare - N°001](/2025/01/29/i-progettisti-sono-fatti-per-restare/) – Quando tutto diventa commodity, il valore sta nell'umanità che connette i puntini.
 
 ## Mele e pere
 
@@ -53,9 +52,9 @@ Papua Nuova Guinea, 2023. Francesca mi si avvicina dopo aver parlato con suo zio
 
 Uomo ed AI devono camminare a fianco, senza perdere l'identità dei primi o antropomorfizzando la seconda. La tecnica nella sua forma di intelligenza artificiale deve essere considerata uno strumento, uno sparring partner per una collaborazione efficace e potenziante della nostra natura, mai il contrario. Nel 1800 non ci siamo preoccupati dell'eccesso di elettricità, oggi non dovremmo preoccuparci dell'eccesso di AI... fin quando l'AI viene considerata come strumento e non come concorrente.
 
-> "Il futuro appartiene a chi saprà fondere intelligenza biologica e artificiale. Non è una gara, è un duetto" - Ray Kurweil
+> "Il futuro appartiene a chi saprà fondere intelligenza biologica e artificiale. Non è una gara, è un duetto" - Ray Kurzweil
 
-Se strumenti come Tiktok son sufficienti per scassarci il cervello e far eleggere parola dell'anno 2024 "brain rot", quanto in basso potremmo arrivare con una diffusione incondizionata di ChatGPT?
+Se strumenti come TikTok sono sufficienti per scassarci il cervello e far eleggere parola dell'anno 2024 "brain rot", quanto in basso potremmo arrivare con una diffusione incondizionata di ChatGPT?
 
 Dalla mia esperienza, la strada che meglio ci porterà a rivivere un nuovo rinascimento e rimettere l'uomo al centro è quella che impone all'AI di rimanere sul binario parallelo al nostro. Purtroppo deve essere per forza un'imposizione, perché al nostro cervello fallace piace un sacco l'affect heuristic e perderemmo il nostro primato più velocemente di quanto stiamo già facendo.
 
@@ -75,7 +74,7 @@ Senza un obiettivo o istruzioni specifiche, le macchine restano immobili. Sarebb
 
 ### Socialità e intelligenza emotiva
 
-Vi immaginate un giorno guardare negli occhi un robot e digli "Ti amo"? Purtroppo non è sci-fi, anzi, c'è già gente che s'ammazza per cyber-amore. Ma tralasciando casi patologici, direi che è un futuro poco verosimile. Siamo esseri sociali per natura, dotati di intelligenza emotiva e con una predisposizione a vivere tra simili. È un altro tratto da non tralasciare e una virtù che nessun chip potrà sentire. Al più emulare.
+Vi immaginate un giorno guardare negli occhi un robot e dirgli "Ti amo"? Purtroppo non è sci-fi, anzi, c'è già gente che s'ammazza per cyber-amore. Ma tralasciando casi patologici, direi che è un futuro poco verosimile. Siamo esseri sociali per natura, dotati di intelligenza emotiva e con una predisposizione a vivere tra simili. È un altro tratto da non tralasciare e una virtù che nessun chip potrà sentire. Al più emulare.
 
 > "I robot padroneggiano il riconoscimento facciale, ma non sanno cosa significa sentire un volto. La creatività umana nasce dalla vulnerabilità, non dagli algoritmi" - Yuval Noah Harari
 

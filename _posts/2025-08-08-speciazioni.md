@@ -4,6 +4,7 @@ title: "N°015 - Speciazioni"
 date: 2025-08-08 15:42:36 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Quando tutto appare normale e statico, l'unico modo per evolvere è chiedersi \"E se...?\", abbracciare l'errore e custodire il proprio essere marziani."
 ---
 
 Settimana in tema con i pensieri che vado a raccontarvi. Si è parlato di futuro, di nuove iniziative, di creare ma anche di rallentare e ritrovare un ritmo.

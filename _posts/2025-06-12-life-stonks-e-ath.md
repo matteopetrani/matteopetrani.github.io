@@ -4,13 +4,14 @@ title: "N°013 - Life Stonks e ATH"
 date: 2025-06-12 06:23:39 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "L'ossessione per la crescita eterna tradisce la paura della morte: tra miti e rinascite serve riabbracciare cicli, dolore e normalità."
 ---
 
 È un po' che non scrivo. Le due ore abbondanti per partorire un pezzo sono state volutamente impegnate in famiglia, ad osservarci e sorriderci. Può capitare :)
 
 È il 2025, e tutto deve crescere. Follower, like, view. Il progresso, la tecnica, il numero di parametri dell'ennesimo LLM. Le amicizie, l'amore per il partner, la famiglia. Nonostante la shrinkflation diffusa (magheggio per far crescere le revenues), sembra non esserci altra strada che crescere. PROVOPRURITO.
 
-Sono cresciuto in aziende che "dobbiamo fare +20% il prossimo anno, altrimenti si muore", eppure si sta bene anche oggi. È necessariamente un male, dopotutto, morire? Perchè finire nel bidone dell'umido fa così paura?
+Sono cresciuto in aziende che "dobbiamo fare +20% il prossimo anno, altrimenti si muore", eppure si sta bene anche oggi. È necessariamente un male, dopotutto, morire? Perché finire nel bidone dell'umido fa così paura?
 
 L'altro giorno mi sono imbattuto in una riflessione di Joseph Campbell, uno che due righe sui miti le ha scritte, e racconta:
 

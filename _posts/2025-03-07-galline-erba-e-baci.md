@@ -4,6 +4,7 @@ title: "N°006 - Galline, erba e baci"
 date: 2025-03-07 07:51:51 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Tra galline nell'orto e riunioni su Meet, prendersi tempo per restare umani è l'antidoto al 9-to-5 e alle maschere professionali."
 ---
 
 Tra campagne CRO, call con fornitori, startup e idee per SaaS, perdo pezzi nell'attesa di Noah. Il corpo chiede di rallentare, la mente spinge per "portarsi avanti". Torno in equilibrio quando mi ricordo di vivere.
@@ -14,7 +15,7 @@ Saluto alcuni colleghi su Meet, altri su Slack, infine, i più sfortunati che us
 
 Ogni volta che entro nel campo mi chino e prendo un po' d'erba, un'esca perfetta per riportare le galline nel pollaio. Potrebbe essere il momento migliore per sbloccare le app con Touch Grass e fare un po' di doomscrolling, ma i due passi per arrivare al recinto delle bestie feroci mi hanno già fatto dimenticare i digital duties che mi incatenano durante la giornata. D'altronde la natura non è un posto da visitare, è casa nostra.
 
-Fuori dal recinto dell'orto rimangono ad aspettarmi task di lavoro, email non risposte e AI agents di dubbia utilità. Nel momento in cui riemergerò da questa piccola bolla di natura, le mia mani si muoveranno pigre sulla tastiera. Piantare radicchio, lattughina e spinaci non farà performare meglio le mie varianti su ABTasty né aumentare le vendite dei miei clienti, ma di sicuro rilassa il diaframma e dona una voce profonda.
+Fuori dal recinto dell'orto rimangono ad aspettarmi task di lavoro, email non risposte e AI agents di dubbia utilità. Nel momento in cui riemergerò da questa piccola bolla di natura, le mie mani si muoveranno pigre sulla tastiera. Piantare radicchio, lattughina e spinaci non farà performare meglio le mie varianti su ABTasty né aumentare le vendite dei miei clienti, ma di sicuro rilassa il diaframma e dona una voce profonda.
 
 ## Come portare l'orto dentro Meet?
 
@@ -40,13 +41,11 @@ Ora chiudete Gmail e andate a fare due passi su un prato, suvvia.
 
 Cosa sto leggendo
 
- - Is your brain designed to handle so much information?: articolo breve ma che condivido parola per parola
- - The SaaS playbook: un libro decente su come creare SaaS monetizzabili
+ - [The SaaS playbook](https://www.goodreads.com/book/show/178816351-the-saas-playbook): un libro decente su come creare SaaS monetizzabili
 
 Link belli
 
- - Strategie per far crescere la propria newsletter
- - Una newsletter umana: Davide, un amico, scrive bene, scrive dal cuore e ha studiato un bellissimo percorso per fare chiarezza sulla propria carriera
+ - [Una newsletter umana](https://davidebenaroio.substack.com/): Davide, un amico, scrive bene, scrive dal cuore e ha studiato un bellissimo percorso per fare chiarezza sulla propria carriera
  - The substance lookbook: se avete visto il film, non potete che rimanere affascinati da questo PDF
  - Costruire una nave da crociera non è poi così complesso
  - Se sei un traduttore, sarà meglio iniziare a cambiare lavoro.

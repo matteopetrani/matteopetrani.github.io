@@ -4,8 +4,8 @@ title: "N°001 - I progettisti sono fatti per restare"
 date: 2025-01-29 18:32:33 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Perché il valore del design sta nella strategia e nell'umanità che governa gli strumenti, non negli strumenti stessi."
 ---
-
 Si salpa! Primo post, confezionato prima di andare a pranzo dalla nonna.
 
 Se mi avete sentito parlare di design negli ultimi anni, saprete che ripeto spesso una cosa: qualsiasi piattaforma digitale erogata tramite pixel è ormai una commodity 🤷‍♂️ .
@@ -28,9 +28,9 @@ Come sottolinea Jaron Lanier (pioniere della realtà virtuale e critico delle pi
 
 Ecco il nostro dovere, oggi: accettare che l'uomo sia al servizio della tecnica, ma proteggere con le unghie l'unicità umana del nostro operato. Quella fatta di:
 
- - Consapevolezza (non di dati)
- - Bilanciamento (non di ottimizzazioni)
- - Gentilezza (non di engagement)
+- Consapevolezza (non di dati)
+- Bilanciamento (non di ottimizzazioni)
+- Gentilezza (non di engagement)
 
 > Tristan Harris, ex design ethicist di Google, ha più volte sottolineato come le piattaforme social siano progettate per catturare la nostra attenzione a ogni costo, mentre ciò di cui avremmo veramente bisogno è un design che privilegi il rispetto e la cura delle relazioni.
 
@@ -49,10 +49,10 @@ Il nostro superpotere? Progettare oltre la macchina. E per farlo, dobbiamo sì p
 
 Cosa sto leggendo
 
- - La mente del bambino - Maria Montessori
- - Oltre l'invisibile - Federico Faggin
+- La mente del bambino - Maria Montessori
+- Oltre l'invisibile - Federico Faggin
 
-Ti consiglio:.
+Ti consiglio:
 
- - Writers and Write-Nots: Paul Graham spiega l'importanza di scrivere.
- - The rise of super AIs: Intervista a Jensen Huang (CEO NVDIA) dove racconta la sua visione sul futuro dell'AI e della robotica.
+- [Writers and Write-Nots](https://paulgraham.com/writes.html): Paul Graham spiega l'importanza di scrivere.
+- [The rise of super AIs](https://www.youtube.com/watch?v=7ARBJQn6QkM&pp=ygUVdGhlIHJpc2Ugb2Ygc3VwZXIgQUlz): Intervista a Jensen Huang (CEO NVIDIA) dove racconta la sua visione sul futuro dell'AI e della robotica.

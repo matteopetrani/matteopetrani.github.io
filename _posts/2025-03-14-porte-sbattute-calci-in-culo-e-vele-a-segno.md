@@ -4,6 +4,7 @@ title: "N°007 - Porte sbattute, calci in culo e vele a segno"
 date: 2025-03-14 19:45:18 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "La vita in barca è diventata casa dopo una porta sbattuta: accettare la tempesta, alleggerirsi e lasciare che il mare indichi la rotta."
 ---
 
 Questa edizione è diversa dalle precedenti, si parla di vita, si parla di cambiamenti. Di ancore, di mare, di barche a vela e di burrasche.

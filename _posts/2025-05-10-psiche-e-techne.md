@@ -4,6 +4,7 @@ title: "N°011 - Psiche e Techne"
 date: 2025-05-10 06:38:18 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Galimberti insegna che la tecnica non cerca senso: possiamo rispondere solo coltivando coscienza, amore e nuovi modi di stare al mondo."
 ---
 
 È un po' che non scrivo, non c'erano parole sufficienti per comporre dei paragrafi di senso. La vita mi affascina, mi tiene incollato ad essa, lontano da tastiere, schermi e feeds.
@@ -18,7 +19,7 @@ Tuttavia, nelle prime pagine già si affrontano temi fastidiosi e a me cari.
 
 Forse abbiamo trovato una applicazione reale del termine Metaverso (lo sentite ancora là fuori? Io no per fortuna). La tecnica, che solo all'inizio è stato uno strumento nelle mani dell'uomo, ora è l'ambiente dentro il quale viviamo. Non solo, è struttura ogni dimensione della nostra esistenza. Uallà, il metaverso.
 
-Non possiamo più evitare la tecnica,. Il mondo che essa ha creato è il mondo che dobbiamo abitare e che, inevitabilmente, ci ha cambiato.
+Non possiamo più evitare la tecnica. Il mondo che essa ha creato è il mondo che dobbiamo abitare e che, inevitabilmente, ci ha cambiato.
 
 Sotto tutti i punti di vista, la tecnica è diventata la nostra essenza. Rispetto agli animali, che hanno ancora l'istinto, noi siamo zoppi biologicamente e solo grazie alla tecnica riusciamo a sopravvivere (sì, parlo anche dell'arco e della freccia degli Hadza di cui vi lascio un video spettacolare). Noi bipedi con il cervello sapiens viviamo solo grazie all'azione.
 
@@ -40,7 +41,7 @@ In questo scenario apocalittico, l’uomo non si sente più estraniato dal siste
 
 Si arrende, celebra la sua impotenza. Dubitare della tecnica significherebbe ammazzare la possibilità di raggiungere un qualsiasi scopo e senso. E in questa equazione così sbilanciata, l'uomo è a tutti gli effetti solamente un attuatore della macchina. La tecnica ha superato i limiti precedenti e ha reso obsoleti i concetti umanistici come individuo, identità, libertà, salvezza, verità, senso e scopo.
 
-Sbernacchiato, torno con i piedi per terra e penso al mio lavoro in primis, che è quanto mai collegato alla tecnica. Che senso ha quello che faccio? Tl;dr: apparentemente molto, umanamente poco. Progetto soluzioni digitali che intermediano gli uomini con servizi, che aiutano le aziende a raccimolare quel punto percentuale di conversione in più e salvare le chiappe a qualche manager, che permettono di trovare parcheggio all'aeroporto e pagare con due click. E tanti altri progetti simili.
+Sbernacchiato, torno con i piedi per terra e penso al mio lavoro in primis, che è quanto mai collegato alla tecnica. Che senso ha quello che faccio? TL;DR: apparentemente molto, umanamente poco. Progetto soluzioni digitali che intermediano gli uomini con servizi, che aiutano le aziende a racimolare quel punto percentuale di conversione in più e salvare le chiappe a qualche manager, che permettono di trovare parcheggio all'aeroporto e pagare con due click. E tanti altri progetti simili.
 
 Non essendo un nichilista, ho imparato a confinare lo sconforto emotivo dell'assenza di senso, per concentrarmi su quello che, nella vita, ha veramente senso: l'amore. Come ho già scritto, in questo operare senza abbiamo una via di fuga.
 
@@ -48,7 +49,7 @@ Non essendo un nichilista, ho imparato a confinare lo sconforto emotivo dell'ass
 
 Vivere senza meta, muovendosi senza una direzione precisa e accettando l'incertezza del cammino è forse la più grande presa di posizione che ci è rimasta. L'accettazione dei propri limiti e l'abbandono dell'illusione di controllo e dominio, ci permette di vivere leggeri annaffiando il nostro giardino di emozioni.
 
-La bussola senza nord - N°008Lasciarsi alla deriva, un modo semplice per continuare a meravigliarsi.Sottocoperta (Matteo Petrani)Matteo Petrani
+[La bussola senza nord - N°008](/2025/03/21/la-bussola-senza-nord/) – Lasciarsi alla deriva, un modo semplice per continuare a meravigliarsi.
 
 Anche il buon Galimberti nel libro L'etica del viandante (altro mattone scorrevole come l'asfalto appena posato) ci invita a riconoscere l'impotenza dell'uomo di fronte alla tecnica e di accettare la necessità di ridefinire i concetti umanistici alla luce della nuova realtà tecnica. Altrimenti, ogni lavoro rischia di essere un'azione superficiale, incapace di affrontare le sfide poste dalla tecnica.
 
@@ -93,4 +94,6 @@ Cosa sto leggendo
 
 Link belli
 
-The DialThe Dial is an online magazine of culture, politics, and ideas with a focus on locally sourced writing from around the world.The Dial0Terrible SoftwareSoftware | Engineering Leadership | TechTerrible SoftwareThe Garden of Maggie AppletonMaggie’s digital garden filled with visual essays on programming, design, and anthropology
+ - [The Dial](https://www.thedial.world/): magazine online di cultura, politica e idee con contributi da tutto il mondo.
+ - [Terrible Software](https://terriblesoftware.org/): punto di vista su software, engineering leadership e tech.
+ - [The Garden of Maggie Appleton](https://maggieappleton.com/garden): il giardino digitale pieno di saggi visuali su programmazione, design e antropologia.

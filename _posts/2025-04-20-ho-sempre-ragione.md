@@ -4,6 +4,7 @@ title: "N°010 - Ho sempre ragione"
 date: 2025-04-20 06:18:01 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Affidare emozioni e conflitti all'AI ci rende meno umani: torniamo a conversazioni lente, al dubbio e a spazi offline dove tenere la barra a mano."
 ---
 
 Questa settimana torniamo a parlare di AI; mi nascono molti interrogativi quando guardo Noah e penso al suo futuro.
@@ -22,7 +23,7 @@ Se provate a chiedere un feedback su un vostro comportamento, un vostro dubbio, 
 
 ## Navigare a vista?
 
-Qui la faccenda si fa filosofica. Ci stiamo abituando ad essere sempre meno tolleranti con la complessità umana (noiosa, che richiede tempo, ascolto vero, e magari anche qualche discussione). Inoltre, il rischio è che anche le interazioni umane diventino come interfacce: input, output, risultato atteso. Se non arriva, è un bug del sistema "umano"con il rischio di atrofia della nostra capacità di navigare le emozioni complesse. Di costruire legami che richiedono vulnerabilità, riparazioni e l'accettazione che non sempre si capisce subito dove sta andando l'altro.
+Qui la faccenda si fa filosofica. Ci stiamo abituando ad essere sempre meno tolleranti con la complessità umana (noiosa, che richiede tempo, ascolto vero, e magari anche qualche discussione). Inoltre, il rischio è che anche le interazioni umane diventino come interfacce: input, output, risultato atteso. Se non arriva, è un bug del sistema "umano" con il rischio di atrofia della nostra capacità di navigare le emozioni complesse. Di costruire legami che richiedono vulnerabilità, riparazioni e l'accettazione che non sempre si capisce subito dove sta andando l'altro.
 
 Stiamo perdendo la capacità di navigare a sentimento, di leggere le stelle dell'empatia, perché ci affidiamo a un GPS emotivo che ci dà sempre la rotta più "efficiente". Ma efficiente non significa necessariamente "ricca" o "vera".
 
@@ -45,5 +46,3 @@ Buon vento (e occhi aperti sulla bussola interiore).
 Cosa sto leggendo
 
  - Pensieri lenti e veloci
-
-Link belli

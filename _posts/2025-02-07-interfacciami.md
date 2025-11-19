@@ -4,6 +4,7 @@ title: "N°003 - Interfacciami"
 date: 2025-02-07 07:24:01 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Interfacciarsi con l'AI significa andare oltre i prompt e difendere consapevolezza, etica e umanità nelle nostre conversazioni con la macchina."
 ---
 
 Questa settimana ho ripreso a lavorare con BlackPep e Intarget nel ruolo di Head Of CRO. Sono già 8 mesi che collaboro con loro per aumentare la conversione degli e-commerce, prevalentemente nei settori luxury & fashion. Servirebbe un post a parte per raccontare tutto quello che sto imparando.
@@ -56,10 +57,10 @@ Da professionista, è un momento da navigare a vele spiegate per guidare aziende
 
 Da persona, vivo tutto questo guardandomi dentro, cercando di portare a galla quanto di più umano c’è nei miei pensieri e nelle mie azioni.
 
-Alla fine della fiera, credo che interfacciarsi con l’AI è un modo per interfacciarsi con noi stessi.
+Alla fine della fiera, credo che interfacciarsi con l’AI sia un modo per interfacciarsi con noi stessi.
 
 Link belli
 
- - Vivere nella Savannah: uno dei video più belli di Project Happiness
+ - [Vivere nella Savannah](https://www.youtube.com/watch?v=igI9QKW0bQ8): uno dei video più belli di Project Happiness
 
 ve ne lascio uno solo perché merita e non voglio portarvi via più di 1h di screentime.

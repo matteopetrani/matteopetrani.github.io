@@ -4,6 +4,7 @@ title: "Design for time"
 date: 2025-02-10 07:30:40 +0000
 author: "Matteo Petrani"
 telegram: ""
+excerpt: "Un manifesto aperto che invita a progettare per il tempo, liberandolo da doveri inutili e riportandolo al servizio dell'essere umano."
 ---
 
 È giusto convincersi che il tempo passato davanti ad un Mac sia "giusto"? È un po' che mi interrogo su questo aspetto, specialmente in queste settimane che ho ripreso a "produrre". Cerco di dare una forma a questo tempo, un proposito. Fuori intanto, la natura vive il suo corso.
@@ -19,7 +20,7 @@ Son 15 anni che lavoro per progettare esperienze digitali e lo "screen time" è 
 
 Mi è sempre piaciuta la strofa di Willie Peyote: "Vogliamo tutti risparmiare tempo, e poi con questo tempo in più cosa si fa? Bah.". Quanto è vera? È anche vero che avere del tempo libero è il punto di partenza per poterlo usare con testa. Tornano a galla tutti i concetti di fare spazio, di liberare, di svuotare per permettere ad altro di entrare nella nostra vita. Di questo magari ne parliamo in futuro.
 
-Partendo da questi presupposti ho iniziato a scrivere un piccolo manifesto. È una bozza aperta a feedback e suggerimenti; intano vi condivido un WIP.
+Partendo da questi presupposti ho iniziato a scrivere un piccolo manifesto. È una bozza aperta a feedback e suggerimenti; intanto vi condivido un WIP.
 
 Son solo 4 punti per ora, conto di estenderlo per essere più inclusivo di altri aspetti della vita.
 
@@ -27,7 +28,7 @@ I 4 principi possono essere riassunti così:
 
  1. Ogni essere vivente è libero e come tale sceglie come usare il proprio tempo vitale.
  2. Laddove possibile, ridurre o azzerare ogni dovere necessario alla sopravvivenza
- 3. L'innovazione e la tecnologia devono prendersi in carico tutti doveri ed obblighi per l'individuo provenienti da società, economia, politica
+ 3. L'innovazione e la tecnologia devono prendersi in carico tutti i doveri e gli obblighi per l'individuo provenienti da società, economia, politica
  4. Qualsiasi prodotto o servizio deve nascere da un pensiero d'amore
 
 Ne aggiungereste altri?
@@ -44,5 +45,5 @@ E tu, come vorresti usare il tuo tempo?
 
 Cosa sto leggendo
 
- - La mente del bambino - Maria Montessori
- - Oltre l'invisibile - Federico Faggin
+ - [La mente del bambino](https://www.goodreads.com/book/show/103905388-la-mente-del-bambino) - Maria Montessori
+ - [Oltre l'invisibile](https://goodreads.com/book/show/214571974) - Federico Faggin

@@ -10,4 +10,4 @@ Oggi mi concentro soprattutto sullo sviluppo e la gestione di test per aumentare
 
 Credo in un approccio olistico che tenga insieme persone, business e tecnologia. Lavoro solo quando c’è un buon fit, con processi semplici, puliti e orientati ai risultati. Mi interessa soprattutto misurare l’impatto reale della nostra collaborazione.
 
-Son sempre disponibile a [conoscerci](https://cal.com/matpet) ed ascoltare le esigenze della tua impresa.
+**Son sempre disponibile a [conoscerci](https://cal.com/matpet) ed ascoltare le esigenze della tua impresa.**

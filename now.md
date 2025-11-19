@@ -3,7 +3,6 @@ layout: page
 title: Now
 permalink: /now/
 ---
-**Cosa sto facendo in questo momento?**
 
 * Cerco di capire come accendere il camino senza fare fumo
 * Sto leggendo "Il codice dell'anima" di Hillman.

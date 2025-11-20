@@ -2,12 +2,12 @@
 layout: home
 title: Home
 ---
-[Product designer, CRO specialist](https://www.linkedin.com/in/matteopetrani/) & padre.
+[Product designer, CRO specialist](https://www.linkedin.com/in/matteopetrani/) & padre di Noah.
 
-Lavoro come UX designer dal 2012. Ho iniziato in [H-Farm](https://www.h-farm.com/ithttps:/), poi in [Sketchin](https://sketchin.com/https:/) e oggi collaboro come freelance con aziende di diverse dimensioni. Nel tempo ho ricoperto l’intera filiera del design digitale, dalla UI alla direzione tecnologica.
+Sono un designer con oltre 14 anni di esperienza nel trasformare una visione in risultati concreti, lavorando su piattaforme SaaS, ecommerce e servizi digitali. Specializzato in **CRO** e **design sistemico**, unisco il rigore dell’ingegneria alla cura per i dettagli, i casi limite e il “perché” che guida ogni scelta di design.
 
-Oggi mi concentro soprattutto sullo sviluppo e la gestione di test per aumentare la conversion rate degli e-commerce.
+Dopo le esperienze in [H-Farm](https://www.h-farm.com/ithttps:/) e [Sketchin](https://sketchin.com/https:/), oggi lavoro come **freelance** con aziende che vogliono migliorare l’esperienza utente e aumentare le conversioni attraverso A/B test e UX design.
 
-Credo in un approccio olistico che tenga insieme persone, business e tecnologia. Lavoro solo quando c’è un buon fit, con processi semplici, puliti e orientati ai risultati. Mi interessa soprattutto misurare l’impatto reale della nostra collaborazione.
+Credo in un approccio olistico che integra persone, business e tecnologia. Collaboro solo quando c’è un buon fit, con processi chiari, essenziali e orientati ai risultati misurabili. Mi interessa soprattutto generare impatto reale e dimostrabile.
 
-**Son sempre disponibile a [conoscerci](https://cal.com/matpet) ed ascoltare le esigenze della tua impresa.**
+**Sono sempre aperto a una chiacchierata per capire le esigenze della tua azienda: [prenota qui](https://cal.com/matpet).**

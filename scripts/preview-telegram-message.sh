@@ -134,7 +134,7 @@ SLUG=$(echo "$BASENAME" | cut -d'-' -f4-)
 POST_PATH="/${YEAR}/${MONTH}/${DAY}/${SLUG}/"
 POST_URL="${SITE_BASE_URL%/}${POST_PATH}"
 
-TEXT=$(printf '<b>%s</b>\n&gt; %s\n<a href="%s">Leggi</a>' \
+TEXT=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Leggi il post</a>' \
   "${TITLE_ESCAPED}" \
   "${TELEGRAM_ESCAPED}" \
   "${POST_URL}")

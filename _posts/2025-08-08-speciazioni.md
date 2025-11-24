@@ -3,7 +3,7 @@ layout: post
 title: "N°015 - Speciazioni"
 date: 2025-08-08 15:42:36 +0000
 author: "Matteo Petrani"
-telegram: ""
+telegram: "Mi chiedo spesso come abbracciare l'errore, come essere marziani in questa terra di conformisti. Ne parlo nell'ultimo articolo."
 excerpt: "Quando tutto appare normale e statico, l'unico modo per evolvere è chiedersi \"E se...?\", abbracciare l'errore e custodire il proprio essere marziani."
 ---
 

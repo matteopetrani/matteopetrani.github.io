@@ -126,7 +126,7 @@ jobs:
             # Build HTML message:
             # Titolo in grassetto, excerpt come quote (testuale), link cliccabile "Leggi"
             # Si usano newline reali invece di \n e solo tag HTML supportati da Telegram.
-            TEXT=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Leggi</a>' \
+            TEXT=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Leggi il post</a>' \
               "${TITLE_ESCAPED}" \
               "${TELEGRAM_ESCAPED}" \
               "${POST_URL}")

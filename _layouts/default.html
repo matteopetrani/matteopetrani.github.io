@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="{{ page.lang | default: 'it' }}">
 
 <head>
   <meta charset="utf-8">
@@ -20,17 +20,34 @@
 
   <header class="site-header">
     <div class="wrapper">
-      <a class="site-title" href="/">{{ site.title | escape }}</a>
+      <a class="site-title" href="{{ site.data.snippets.menu-home[page.lang].link }}">{{ site.title | escape }}</a>
       <nav class="site-nav">
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="{{ '/now/' | relative_url }}">Now</a>
-        <a href="{{ '/writings/' | relative_url }}">Writings</a>
+        <a href="{{ site.data.snippets.menu-about[page.lang].link }}">About</a>
+        <a href="{{ site.data.snippets.menu-now[page.lang].link }}">Now</a>
+        <a href="{{ site.data.snippets.menu-writings[page.lang].link }}">Writings</a>
       </nav>
     </div>
   </header>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
+      {% include translation-links.html %}
+      {% assign all_translations = translation_candidates | push: translation_source %}
+      <div class="language-switcher">
+        <span>Language:</span>
+        {% for lang in "it,en" | split:"," %}
+          {% if page.lang == lang %}
+            <a class="active disabled" role="button" aria-pressed="true">{{ lang }}</a>
+          {% else %}
+            {% assign alternate_target = all_translations | where: "lang", lang | first %}
+            {% if alternate_target %}
+              <a role="button" href="{{ alternate_target.url }}">{{ lang }}</a>
+            {% else %}
+              <a role="button" href="/{{ lang }}/">{{ lang }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
       <h1 class="visually-hidden">{{ page.title | default: site.title }}</h1>
       {{ content }}
     </div>

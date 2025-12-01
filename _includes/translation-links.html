@@ -1,0 +1,15 @@
+{% if page.original %}
+
+  {% assign target_slug = page.original %}
+  {% assign target_name = target_slug | append: ".md" %}
+
+  {% assign translation_source = site.pages | where: "name", target_name | first %}
+
+{% else %}
+
+  {% assign target_slug = page.name | remove_first: ".md" %}
+  {% assign translation_source = page %}
+
+{% endif %}
+
+{% assign translation_candidates = site.pages | where: "original", target_slug %}

@@ -9,16 +9,17 @@ layout: default
     </section>
 
     <section class="posts">
-        <h2>Recenti</h2>
+        <h2>{{ site.data.snippets.home-recent[page.lang].title }}</h2>
         <ul class="post-list">
-            {% for post in site.posts limit:5 %}
+            {% assign posts_for_lang = site.posts | where: "lang", page.lang %}
+            {% for post in posts_for_lang limit:5 %}
             <li>
                 <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
                 <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </li>
             {% endfor %}
         </ul>
-        <a href="{{ '/writings/' | relative_url }}">Altri post</a>
+        <a href="{{ site.data.snippets.menu-writings[page.lang].link }}">{{ site.data.snippets.home-other-posts[page.lang].title }}</a>
     </section>
 
 </div>

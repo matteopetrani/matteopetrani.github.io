@@ -1,0 +1,23 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith('it')) {
+        window.location.href = '/it/';
+      } else {
+        window.location.href = '/en/';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>

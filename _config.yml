@@ -21,3 +21,11 @@ defaults:
     values:
       excerpt: ""
       telegram: ""
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
+      path: "it"
+    values:
+      lang: "it"

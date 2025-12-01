@@ -1,11 +1,13 @@
 ---
 layout: page
 title: Writings
-permalink: /writings/
+permalink: /en/writings/
+original: writings.md
 ---
 
 <div class="writings">
-  {% assign posts_by_year = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+  {% assign posts_for_lang = site.posts | where: "lang", page.lang %}
+  {% assign posts_by_year = posts_for_lang | group_by_exp: 'post', "post.date | date: '%Y'" %}
   {% assign sorted_years = posts_by_year | sort: 'name' | reverse %}
   {% for year in sorted_years %}
   <section class="writings-year">

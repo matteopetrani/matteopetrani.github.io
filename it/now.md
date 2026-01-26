@@ -4,8 +4,8 @@ title: Now
 permalink: /it/now/
 lang: it
 ---
-* Cerco di capire come accendere il camino senza fare fumo
-* Sto leggendo "[Il codice dell'anima](https://www.goodreads.com/book/show/6643460-il-codice-dell-animahttps:/)" di James Hillman.
-* Sto partecipando al corso di [Life Design](https://lifedesign.davidebenaroio.it/https:/).
+* Noah ogni giorno sblocca una competenza in più. Se fossimo tutti bambini rimarremmo dei supereroi.
+* Son cascato nel rabbit hole degli agenti, skills, commands e hooks di Claude Code.
+* Anno nuovo, cliente nuovo. Finalmente si iniza con Tangible, un gruppo di persone che ho sempre stimato.
 
-*Aggiornato il 19 Novembre 2025.*
+*Aggiornato il 26 Gennaio 2026.*

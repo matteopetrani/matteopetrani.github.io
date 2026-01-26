@@ -5,8 +5,8 @@ permalink: /en/now/
 lang: en
 original: now.md
 ---
-* I'm trying to figure out how to light the fireplace without making smoke
-* I am reading "[The Soul's Code](https://www.goodreads.com/book/show/6643460-il-codice-dell-animahttps:/)" by James Hillman.
-* I am participating in the [Life Design](https://lifedesign.davidebenaroio.it/https:/) course.
+* Noah unlocks a new skill every day. If we were all children, we would remain superheroes.
+* I fell into the rabbit hole of agents, skills, commands and hooks of Claude Code.
+* New year, new client. Finally starting with Tangible, a group of people I've always admired.
 
-*Updated on November 19, 2025.*
+*Updated on January 26, 2026.*

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="{{ page.lang | default: 'it' }}">
 
 <head>
   <meta charset="utf-8">
@@ -20,11 +20,12 @@
 
   <header class="site-header">
     <div class="wrapper">
-      <a class="site-title" href="/">{{ site.title | escape }}</a>
+      {% assign current_lang = page.lang | default: "it" %}
+      <a class="site-title" href="{{ site.data.snippets.menu-home[current_lang].link }}">{{ site.title | escape }}</a>
       <nav class="site-nav">
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="{{ '/now/' | relative_url }}">Now</a>
-        <a href="{{ '/writings/' | relative_url }}">Writings</a>
+        <a href="{{ site.data.snippets.menu-about[current_lang].link }}">About</a>
+        <a href="{{ site.data.snippets.menu-now[current_lang].link }}">Now</a>
+        <a href="{{ site.data.snippets.menu-writings[current_lang].link }}">Writings</a>
       </nav>
     </div>
   </header>
@@ -39,6 +40,34 @@
   <footer class="site-footer">
     <div class="wrapper">
       <p>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</p>
+      {% include translation-links.html %}
+      {% if translation_source %}
+        {% assign all_translations = translation_candidates | push: translation_source %}
+      {% else %}
+        {% assign all_translations = translation_candidates %}
+      {% endif %}
+      <div class="language-switcher">
+        <span>Language:</span>
+        {% assign available_langs = "it,en" | split: "," %}
+        {% for lang in available_langs %}
+          {% if current_lang == lang %}
+            <a class="active disabled" role="button" aria-pressed="true">{{ lang }}</a>
+          {% else %}
+            {% if all_translations %}
+              {% assign alternate_target = all_translations | where: "lang", lang | first %}
+            {% else %}
+              {% assign alternate_target = nil %}
+            {% endif %}
+            {% if alternate_target %}
+              <a role="button" href="{{ alternate_target.url }}">{{ lang }}</a>
+            {% else %}
+              {% assign new_url = page.url | replace_first: current_lang, lang %}
+              <a role="button" href="{{ new_url }}">{{ lang }}</a>
+            {% endif %}
+          {% endif %}
+          {% unless forloop.last %} | {% endunless %}
+        {% endfor %}
+      </div>
       <div class="theme-switcher">
         <span>Theme:</span> <button id="theme-serif" class="theme-btn active">serif</button> | <button id="theme-mono"
           class="theme-btn">mono</button>

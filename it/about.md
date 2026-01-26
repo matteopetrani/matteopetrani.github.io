@@ -1,7 +1,8 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /it/about/
+lang: it
 ---
 *[Cerchi il mio cv?](https://www.linkedin.com/in/matteopetrani/https:/)*
 

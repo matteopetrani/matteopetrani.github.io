@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Home
+lang: it
 ---
 [Product designer, CRO specialist](https://www.linkedin.com/in/matteopetrani/) & padre di Noah.
 

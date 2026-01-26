@@ -5,7 +5,7 @@ layout: default
 
     <header class="post-header">
         <nav class="breadcrumbs">
-            <a href="/">Home</a> / <a href="{{ '/writings/' | relative_url }}">Writings</a> / {{ page.title | escape }}
+            <a href="{{ site.data.snippets.menu-home[page.lang].link }}">{{ site.data.snippets.menu-home[page.lang].title }}</a> / <a href="{{ site.data.snippets.menu-writings[page.lang].link }}">{{ site.data.snippets.menu-writings[page.lang].title }}</a> / {{ page.title | escape }}
         </nav>
         <h1 class="post-title">{{ page.title | escape }}</h1>
         <p class="post-meta post-meta--title">

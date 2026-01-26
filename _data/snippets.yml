@@ -1,0 +1,39 @@
+# _data/snippets.yml
+menu-home:
+  en:
+    title: Home
+    link: /en/
+  it:
+    title: Home
+    link: /it/
+menu-about:
+  en:
+    title: About
+    link: /en/about/
+  it:
+    title: About
+    link: /it/about/
+menu-now:
+  en:
+    title: Now
+    link: /en/now/
+  it:
+    title: Now
+    link: /it/now/
+menu-writings:
+  en:
+    title: Writings
+    link: /en/writings/
+  it:
+    title: Writings
+    link: /it/writings/
+home-recent:
+  en:
+    title: Recent
+  it:
+    title: Recenti
+home-other-posts:
+  en:
+    title: Other posts
+  it:
+    title: Altri post

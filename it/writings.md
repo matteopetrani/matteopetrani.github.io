@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Writings
-permalink: /writings/
+permalink: /it/writings/
+lang: it
 ---
 
 <div class="writings">

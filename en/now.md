@@ -2,6 +2,7 @@
 layout: page
 title: Now
 permalink: /en/now/
+lang: en
 original: now.md
 ---
 * I'm trying to figure out how to light the fireplace without making smoke

@@ -2,6 +2,7 @@
 layout: page
 title: Writings
 permalink: /en/writings/
+lang: en
 original: writings.md
 ---
 

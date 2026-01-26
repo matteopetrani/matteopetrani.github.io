@@ -295,6 +295,40 @@ img {
   text-decoration: underline;
 }
 
+/* Language Switcher */
+.language-switcher {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: monospace;
+  font-size: 0.7em;
+  color: var(--text-color);
+}
+
+.language-switcher a {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.language-switcher a:hover:not(.disabled) {
+  text-decoration: underline;
+}
+
+.language-switcher a.active {
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.language-switcher a.disabled {
+  cursor: default;
+}
+
 /* Mono Theme */
 [data-theme="mono"] {
   --bg-color: #f0f0f0;

@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Now
-permalink: /now/
+permalink: /it/now/
+lang: it
 ---
 * Cerco di capire come accendere il camino senza fare fumo
 * Sto leggendo "[Il codice dell'anima](https://www.goodreads.com/book/show/6643460-il-codice-dell-animahttps:/)" di James Hillman.

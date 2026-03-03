@@ -5,7 +5,7 @@ permalink: /en/about/
 lang: en
 original: about.md
 ---
-*[Looking for my CV?](https://www.linkedin.com/in/matteopetrani/https:/)*
+*[Looking for my CV?](https://www.linkedin.com/in/matteopetrani/)*
 
 -
 

@@ -30,7 +30,7 @@ Ma allora: chi deve seriamente preoccuparsi per la propria carriera? Chi si salv
 
 Avevo già iniziato una riflessione sul tema, raccontando del perché i progettisti possono dormire notti tranquille; ora andiamo oltre.
 
-[I progettisti sono fatti per restare - N°001](/2025/01/29/i-progettisti-sono-fatti-per-restare/) – Quando tutto diventa commodity, il valore sta nell'umanità che connette i puntini.
+[I progettisti sono fatti per restare - N°001](/2025/01/29/i-progettisti/) – Quando tutto diventa commodity, il valore sta nell'umanità che connette i puntini.
 
 ## Mele e pere
 

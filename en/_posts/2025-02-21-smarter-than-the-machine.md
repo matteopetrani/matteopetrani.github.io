@@ -31,7 +31,7 @@ But then: who should seriously worry about their career? Who is saved? But above
 
 I had already started a reflection on the topic, talking about why designers can sleep soundly at night; now let's go further.
 
-[Designers are made to last - N°001](/2025/01/29/designers-are-made-to-stay/) – When everything becomes a commodity, the value lies in the humanity that connects the dots.
+[Designers are made to last - N°001](/2025/01/29/designers-are-made-to-last/) – When everything becomes a commodity, the value lies in the humanity that connects the dots.
 
 ## Apples and pears
 

@@ -51,7 +51,7 @@
         {% assign available_langs = "it,en" | split: "," %}
         {% for lang in available_langs %}
           {% if current_lang == lang %}
-            <a class="active disabled" role="button" aria-pressed="true">{{ lang }}</a>
+            <span class="active disabled" aria-current="true">{{ lang }}</span>
           {% else %}
             {% if all_translations %}
               {% assign alternate_target = all_translations | where: "lang", lang | first %}
@@ -59,10 +59,10 @@
               {% assign alternate_target = nil %}
             {% endif %}
             {% if alternate_target %}
-              <a role="button" href="{{ alternate_target.url }}">{{ lang }}</a>
+              <a href="{{ alternate_target.url }}">{{ lang }}</a>
             {% else %}
               {% assign new_url = page.url | replace_first: current_lang, lang %}
-              <a role="button" href="{{ new_url }}">{{ lang }}</a>
+              <a href="{{ new_url }}">{{ lang }}</a>
             {% endif %}
           {% endif %}
           {% unless forloop.last %} | {% endunless %}

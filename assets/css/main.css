@@ -304,13 +304,13 @@ img {
   color: var(--text-color);
 }
 
-.language-switcher a {
+.language-switcher a,
+.language-switcher span {
   background: none;
   border: none;
   padding: 0;
   margin: 0;
   font: inherit;
-  cursor: pointer;
   color: inherit;
   text-decoration: none;
 }
@@ -319,13 +319,13 @@ img {
   text-decoration: underline;
 }
 
-.language-switcher a.active {
+.language-switcher .active {
   font-weight: bold;
   color: var(--text-color);
   text-decoration: underline;
 }
 
-.language-switcher a.disabled {
+.language-switcher .disabled {
   cursor: default;
 }
 

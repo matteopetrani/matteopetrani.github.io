@@ -1,0 +1,32 @@
+google_tag_manager: GTM-W2DKPLFB
+title: Matteo Petrani
+email: matteo.petrani@gmail.com
+description: >-
+  Writings and about.
+baseurl: ""
+url: ""
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+
+include:
+  - .well-known
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      excerpt: ""
+      telegram: ""
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
+      path: "it"
+    values:
+      lang: "it"

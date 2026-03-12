@@ -134,6 +134,10 @@
         overrides['newsletter-variant'] = true;
       }
 
+      if (params.get('utm_source') === 'linkedin' || document.referrer.indexOf('linkedin.com') !== -1) {
+        overrides['linkedin-visitor-cta'] = true;
+      }
+
       if (Object.keys(overrides).length > 0) {
         posthog.featureFlags.override(overrides);
       }

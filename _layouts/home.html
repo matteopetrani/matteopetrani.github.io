@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<div id="linkedin-cta" style="display:none" class="linkedin-cta">
+  <p id="linkedin-cta-text"></p>
+</div>
+
 <div class="home">
 
     <section class="bio">
@@ -23,3 +27,27 @@ layout: default
     </section>
 
 </div>
+
+<script>
+  posthog.onFeatureFlags(function () {
+    if (posthog.isFeatureEnabled('linkedin-visitor-cta')) {
+      var lang = document.documentElement.lang || 'it';
+      var ctaEl = document.getElementById('linkedin-cta');
+      var ctaText = document.getElementById('linkedin-cta-text');
+
+      if (lang === 'en') {
+        ctaText.innerHTML = 'Want to get to know me and see if there\'s a fit with your project? <a href="https://cal.com/matpet">Let\'s have a chat \u2192</a>';
+      } else {
+        ctaText.innerHTML = 'Desideri conoscermi e capire se c\u2019\u00e8 un fit con il tuo progetto? <a href="https://cal.com/matpet">Facciamoci una chiacchierata \u2192</a>';
+      }
+
+      ctaEl.style.display = 'block';
+
+      // Hide the "always open for a chat" paragraph (last <p> in .bio)
+      var bioParagraphs = document.querySelectorAll('.bio p');
+      if (bioParagraphs.length) {
+        bioParagraphs[bioParagraphs.length - 1].style.display = 'none';
+      }
+    }
+  });
+</script>

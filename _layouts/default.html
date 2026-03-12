@@ -28,6 +28,26 @@
     if (localStorage.getItem('cookie_consent') === 'accepted') {
       posthog.opt_in_capturing();
     }
+    // Apply UTM / query-string feature flag overrides immediately so they are
+    // in place before any onFeatureFlags callback (including those in page content) fires.
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var overrides = {};
+      params.forEach(function (value, key) {
+        if (key.indexOf('flag_') === 0) {
+          overrides[key.slice(5)] = value === 'true' || value === '1';
+        }
+      });
+      if (params.get('utm_source') === 'newsletter') {
+        overrides['newsletter-variant'] = true;
+      }
+      if (params.get('utm_source') === 'linkedin' || document.referrer.indexOf('linkedin.com') !== -1) {
+        overrides['linkedin-visitor-cta'] = true;
+      }
+      if (Object.keys(overrides).length > 0) {
+        posthog.featureFlags.override(overrides);
+      }
+    })();
   </script>
   <!-- End PostHog -->
 </head>
@@ -116,32 +136,8 @@
     })();
 
     // ── UTM / query-string feature flag overrides ───────────────────────────
-    // Activate a PostHog feature flag via URL:
-    //   ?flag_<flag-name>=true   e.g. ?flag_new-layout=true
-    // UTM params are also captured automatically by PostHog.
-    // utm_source=newsletter activates the "newsletter-variant" flag.
-    posthog.onFeatureFlags(function () {
-      var params = new URLSearchParams(window.location.search);
-      var overrides = {};
-
-      params.forEach(function (value, key) {
-        if (key.indexOf('flag_') === 0) {
-          overrides[key.slice(5)] = value === 'true' || value === '1';
-        }
-      });
-
-      if (params.get('utm_source') === 'newsletter') {
-        overrides['newsletter-variant'] = true;
-      }
-
-      if (params.get('utm_source') === 'linkedin' || document.referrer.indexOf('linkedin.com') !== -1) {
-        overrides['linkedin-visitor-cta'] = true;
-      }
-
-      if (Object.keys(overrides).length > 0) {
-        posthog.featureFlags.override(overrides);
-      }
-    });
+    // Overrides are applied eagerly in <head> (see PostHog init block above)
+    // so they are in place before any onFeatureFlags callback fires.
 
     // ── Click tracking ───────────────────────────────────────────────────────
     // PostHog autocapture handles most events; this adds richer metadata for

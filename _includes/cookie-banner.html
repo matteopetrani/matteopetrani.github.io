@@ -1,0 +1,18 @@
+{% assign lang = page.lang | default: "it" %}
+<div id="cookie-banner" class="cookie-banner" style="display:none" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-banner__inner">
+    {% if lang == "it" %}
+    <p>Questo sito usa cookie analitici per capire come viene visitato. <a href="/it/cookie-policy/">Cookie policy</a></p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept" class="cookie-btn cookie-btn--accept">Accetta</button>
+      <button id="cookie-decline" class="cookie-btn cookie-btn--decline">Rifiuta</button>
+    </div>
+    {% else %}
+    <p>This site uses analytics cookies to understand how it is visited. <a href="/en/cookie-policy/">Cookie policy</a></p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept" class="cookie-btn cookie-btn--accept">Accept</button>
+      <button id="cookie-decline" class="cookie-btn cookie-btn--decline">Decline</button>
+    </div>
+    {% endif %}
+  </div>
+</div>

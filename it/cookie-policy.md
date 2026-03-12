@@ -11,8 +11,6 @@ Questo sito usa cookie e tecnologie simili per raccogliere dati analitici anonim
 
 **PostHog** — uno strumento di analytics che traccia le visite anonime, le pagine viste e le interazioni con la pagina. I dati vengono conservati su server europei (EU). PostHog può anche gestire feature flag, che permettono di abilitare funzionalità sperimentali per alcuni visitatori.
 
-**Google Tag Manager** — un sistema di gestione tag che può caricare script di terze parti. Attualmente viene usato solo insieme a PostHog.
-
 ## Cosa viene raccolto
 
 - Pagine visitate e durata della visita
@@ -30,4 +28,3 @@ Se hai già espresso una preferenza e vuoi cambiarla, cancella i dati del sito i
 ## Riferimenti
 
 - [Privacy Policy di PostHog](https://posthog.com/privacy)
-- [Privacy Policy di Google](https://policies.google.com/privacy)

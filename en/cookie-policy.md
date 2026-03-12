@@ -12,8 +12,6 @@ This site uses cookies and similar technologies to collect anonymous analytics d
 
 **PostHog** — an analytics tool that tracks anonymous visits, pages viewed, and page interactions. Data is stored on European servers (EU). PostHog also handles feature flags, which allow experimental features to be enabled for specific visitors.
 
-**Google Tag Manager** — a tag management system that can load third-party scripts. Currently used only alongside PostHog.
-
 ## What is collected
 
 - Pages visited and visit duration
@@ -31,4 +29,3 @@ If you have already expressed a preference and want to change it, clear the site
 ## References
 
 - [PostHog Privacy Policy](https://posthog.com/privacy)
-- [Google Privacy Policy](https://policies.google.com/privacy)

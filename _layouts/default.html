@@ -40,6 +40,12 @@
       persistence: 'localStorage',
       autocapture: true,
       bootstrap: _phBootstrapFlags ? { featureFlags: _phBootstrapFlags } : undefined,
+      loaded: function (ph) {
+        if (_phBootstrapFlags) {
+          ph.featureFlags.override(_phBootstrapFlags);
+          ph.reloadFeatureFlags();
+        }
+      },
     });
     // Restore consent if already given
     if (localStorage.getItem('cookie_consent') === 'accepted') {

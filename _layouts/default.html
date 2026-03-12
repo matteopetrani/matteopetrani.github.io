@@ -17,37 +17,34 @@
   <!-- PostHog -->
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    // Compute feature flag bootstraps from UTM params before PostHog init,
+    // so flags are available synchronously when onFeatureFlags callbacks fire.
+    var _phBootstrapFlags = (function () {
+      var params = new URLSearchParams(window.location.search);
+      var flags = {};
+      params.forEach(function (value, key) {
+        if (key.indexOf('flag_') === 0) {
+          flags[key.slice(5)] = value === 'true' || value === '1' ? true : value;
+        }
+      });
+      if (params.get('utm_source') === 'newsletter') { flags['newsletter-variant'] = true; }
+      if (params.get('utm_source') === 'linkedin' || document.referrer.indexOf('linkedin.com') !== -1) {
+        flags['linkedin-visitor-cta'] = true;
+      }
+      return Object.keys(flags).length > 0 ? flags : null;
+    })();
     posthog.init('phc_b1JYU9qdq5dBpsumc7Mfi8hybqq2cHrub4WF23E9q0b', {
       api_host: 'https://eu.i.posthog.com',
       defaults: '2026-01-30',
       opt_out_capturing_by_default: true,
       persistence: 'localStorage',
       autocapture: true,
+      bootstrap: _phBootstrapFlags ? { featureFlags: _phBootstrapFlags } : undefined,
     });
     // Restore consent if already given
     if (localStorage.getItem('cookie_consent') === 'accepted') {
       posthog.opt_in_capturing();
     }
-    // Apply UTM / query-string feature flag overrides immediately so they are
-    // in place before any onFeatureFlags callback (including those in page content) fires.
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var overrides = {};
-      params.forEach(function (value, key) {
-        if (key.indexOf('flag_') === 0) {
-          overrides[key.slice(5)] = value === 'true' || value === '1';
-        }
-      });
-      if (params.get('utm_source') === 'newsletter') {
-        overrides['newsletter-variant'] = true;
-      }
-      if (params.get('utm_source') === 'linkedin' || document.referrer.indexOf('linkedin.com') !== -1) {
-        overrides['linkedin-visitor-cta'] = true;
-      }
-      if (Object.keys(overrides).length > 0) {
-        posthog.featureFlags.override(overrides);
-      }
-    })();
   </script>
   <!-- End PostHog -->
 </head>
@@ -136,8 +133,7 @@
     })();
 
     // ── UTM / query-string feature flag overrides ───────────────────────────
-    // Overrides are applied eagerly in <head> (see PostHog init block above)
-    // so they are in place before any onFeatureFlags callback fires.
+    // Flags are bootstrapped at PostHog init time in <head> via the bootstrap option.
 
     // ── Click tracking ───────────────────────────────────────────────────────
     // PostHog autocapture handles most events; this adds richer metadata for

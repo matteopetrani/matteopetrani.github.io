@@ -9,10 +9,11 @@ layout: null
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
+      var qs = window.location.search;
       if (lang.startsWith('it')) {
-        window.location.href = '/it/';
+        window.location.href = '/it/' + qs;
       } else {
-        window.location.href = '/en/';
+        window.location.href = '/en/' + qs;
       }
     })();
   </script>

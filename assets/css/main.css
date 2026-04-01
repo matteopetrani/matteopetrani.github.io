@@ -407,7 +407,7 @@ img {
 }
 
 [data-theme="mono"] .site-nav a {
-  font-family: 'MonaspaceRadon', monospace;
+  font-family: 'MonaspaceXenon', monospace;
 }
 
 @media (prefers-color-scheme: dark) {

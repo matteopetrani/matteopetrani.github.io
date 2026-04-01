@@ -23,33 +23,116 @@ make_unsub_token() {
   printf '%s.%s' "${payload}" "${sig}"
 }
 
-html_escape() {
-  printf '%s' "$1" \
-    | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g'
-}
-
 url_encode() {
   python3 -c 'import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip()),end="")'
 }
 
-build_html() {
-  local title_esc="$1" excerpt_esc="$2" post_url="$3"
-  local read_label="$4" unsub_url="$5" unsub_label="$6"
+# Extract post body (everything after the second --- frontmatter delimiter)
+extract_body() {
+  awk 'BEGIN{n=0} /^---/{n++; next} n>=2{print}' "$1"
+}
 
-  local excerpt_html=""
-  if [ -n "$excerpt_esc" ]; then
-    excerpt_html="<p style=\"color:#57606b;margin:0 0 24px 0\">${excerpt_esc}</p>"
-  fi
+# Convert markdown body to HTML using pandoc, then inline paragraph styles
+markdown_to_html() {
+  local file="$1"
+  extract_body "$file" \
+    | pandoc --from=markdown --to=html --no-highlight \
+    | python3 -c "
+import sys, re
 
-  printf '%s' \
-    "<!DOCTYPE html><html><body style=\"font-family:monospace;max-width:560px;margin:40px auto;color:#23282e;background:#f6f8fa;padding:32px;line-height:1.5\">" \
-    "<p style=\"margin-bottom:24px\"><a href=\"${SITE_BASE_URL}\" style=\"color:#0553b3;text-decoration:none\">Matteo Petrani</a></p>" \
-    "<h2 style=\"font-weight:400;font-size:1.2em;margin:0 0 12px 0\">${title_esc}</h2>" \
-    "${excerpt_html}" \
-    "<p style=\"margin:0 0 32px 0\"><a href=\"${post_url}\" style=\"color:#0553b3\">${read_label} &rarr;</a></p>" \
-    "<p style=\"font-size:0.75em;color:#717a84;border-top:1px solid #eaeef2;padding-top:16px;margin:0\">" \
-    "<a href=\"${unsub_url}\" style=\"color:#717a84\">${unsub_label}</a></p>" \
-    "</body></html>"
+content = sys.stdin.read()
+
+# Inline styles for email compatibility
+content = re.sub(r'<p>', '<p style=\"margin:0 0 1.4em 0\">', content)
+content = re.sub(r'<h2>', '<h2 style=\"font-weight:400;font-size:1.3em;margin:2em 0 0.5em 0\">', content)
+content = re.sub(r'<h3>', '<h3 style=\"font-weight:400;font-size:1.1em;margin:1.5em 0 0.5em 0\">', content)
+content = re.sub(r'<a ', '<a style=\"color:#222222\" ', content)
+content = re.sub(r'<blockquote>', '<blockquote style=\"border-left:2px solid #ccc;margin:1.5em 0;padding:0 0 0 20px;color:#555\">', content)
+content = re.sub(r'<ul>', '<ul style=\"padding-left:1.5em;margin:0 0 1.4em 0\">', content)
+content = re.sub(r'<ol>', '<ol style=\"padding-left:1.5em;margin:0 0 1.4em 0\">', content)
+content = re.sub(r'<li>', '<li style=\"margin-bottom:0.4em\">', content)
+content = re.sub(r'<hr\s*/?>', '<hr style=\"border:none;border-top:1px solid #e0dbd3;margin:2em 0\">', content)
+print(content, end='')
+"
+}
+
+build_email_html() {
+  local title="$1" date_str="$2" post_url="$3"
+  local body_html="$4" unsub_url="$5" unsub_label="$6"
+
+  python3 - "$title" "$date_str" "$post_url" "$body_html" "$unsub_url" "$unsub_label" << 'PYEOF'
+import sys
+
+title, date_str, post_url, body_html, unsub_url, unsub_label = sys.argv[1:]
+
+print(f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  body {{
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    background: #ffffff;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }}
+  .wrapper {{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 32px;
+  }}
+  .post-title {{
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+    color: #222222;
+  }}
+  .post-meta {{
+    font-size: 0.75em;
+    color: #888888;
+    margin: 0 0 2em 0;
+    font-family: monospace;
+  }}
+  .post-content a {{
+    color: #222222;
+  }}
+  .footer {{
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e0dbd3;
+    font-size: 0.75em;
+    color: #999999;
+  }}
+  .footer a {{
+    color: #999999;
+  }}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <h1 class="post-title">{title}</h1>
+  <p class="post-meta">{date_str}</p>
+  <div class="post-content">
+    {body_html}
+  </div>
+  <div class="footer">
+    <a href="{unsub_url}">{unsub_label}</a>
+  </div>
+</div>
+</body>
+</html>""")
+PYEOF
 }
 
 # ── detect new posts ───────────────────────────────────────────────────────────
@@ -79,18 +162,17 @@ for FILE in $CHANGED_POSTS; do
 
   if [ "$LANG" = "it" ]; then
     SEGMENT_ID="${RESEND_SEGMENT_ID_IT}"
-    READ_LABEL="Leggi il post"
     UNSUB_LABEL="Disiscriviti"
   else
     SEGMENT_ID="${RESEND_SEGMENT_ID_EN}"
-    READ_LABEL="Read the post"
     UNSUB_LABEL="Unsubscribe"
   fi
 
   TITLE=$(awk '/^title:/ { sub(/^title:[ "]*/, ""); sub(/"[ ]*$/, ""); print; exit }' "$FILE")
   [ -z "$TITLE" ] && TITLE="Nuovo post"
 
-  EXCERPT=$(awk '/^excerpt:/ { sub(/^excerpt:[ "]*/, ""); sub(/"[ ]*$/, ""); print; exit }' "$FILE")
+  DATE_RAW=$(awk '/^date:/ { print $2; exit }' "$FILE")
+  DATE_STR=$(date -d "$DATE_RAW" '+%Y-%m-%d' 2>/dev/null || printf '%s' "$DATE_RAW")
 
   BASENAME=$(basename "$FILE" .md)
   YEAR=$(printf '%s' "$BASENAME" | cut -d'-' -f1)
@@ -99,10 +181,9 @@ for FILE in $CHANGED_POSTS; do
   SLUG=$(printf '%s' "$BASENAME" | cut -d'-' -f4-)
   POST_URL="${SITE_BASE_URL%/}/${YEAR}/${MONTH}/${DAY}/${SLUG}/"
 
-  TITLE_ESC=$(html_escape "$TITLE")
-  EXCERPT_ESC=$(html_escape "$EXCERPT")
-
   echo "Processing: $FILE (lang=$LANG)"
+
+  BODY_HTML=$(markdown_to_html "$FILE")
 
   # ── fetch subscribers ────────────────────────────────────────────────────────
 
@@ -124,7 +205,7 @@ for FILE in $CHANGED_POSTS; do
     TOKEN=$(make_unsub_token "$EMAIL" "$LANG")
     UNSUB_URL="${WORKER_BASE_URL%/}/unsubscribe?token=$(printf '%s' "$TOKEN" | url_encode)"
 
-    HTML=$(build_html "$TITLE_ESC" "$EXCERPT_ESC" "$POST_URL" "$READ_LABEL" "$UNSUB_URL" "$UNSUB_LABEL")
+    HTML=$(build_email_html "$TITLE" "$DATE_STR" "$POST_URL" "$BODY_HTML" "$UNSUB_URL" "$UNSUB_LABEL")
 
     PAYLOAD=$(jq -n \
       --arg from "Matteo Petrani <newsletter@matteopetrani.com>" \

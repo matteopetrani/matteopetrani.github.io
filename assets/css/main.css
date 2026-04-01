@@ -141,6 +141,7 @@ a:hover {
 
 /* Newsletter footer form */
 .newsletter-footer {
+  padding-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -152,9 +153,12 @@ a:hover {
 }
 
 .newsletter-footer input[type="email"] {
+  -webkit-appearance: none;
+  appearance: none;
   background: transparent;
   border: none;
   border-bottom: 1px solid currentColor;
+  border-radius: 0;
   outline: none;
   font-family: inherit;
   font-size: inherit;
@@ -168,10 +172,12 @@ a:hover {
   opacity: 0.5;
 }
 
-
 .newsletter-submit {
+  -webkit-appearance: none;
+  appearance: none;
   background: none;
   border: none;
+  border-radius: 0;
   padding: 0;
   font-family: inherit;
   font-size: inherit;

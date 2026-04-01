@@ -77,6 +77,22 @@
 
   <footer class="site-footer">
     <div class="wrapper">
+
+      <div class="newsletter-footer">
+        <p id="newsletter-subscribed" hidden>{% if current_lang == 'en' %}You're subscribed.{% else %}Sei iscritto.{% endif %}</p>
+        <form id="newsletter-form">
+          <input type="hidden" name="lang" id="newsletter-lang" value="{{ current_lang }}">
+          <input type="email" name="email" id="newsletter-email" required
+            placeholder="{% if current_lang == 'en' %}your@email.com{% else %}tua@email.com{% endif %}">
+          <div class="newsletter-lang-choice">
+            <label><input type="radio" name="lang-display" value="it" {% if current_lang != 'en' %}checked{% endif %}> it</label>
+            <label><input type="radio" name="lang-display" value="en" {% if current_lang == 'en' %}checked{% endif %}> en</label>
+          </div>
+          <button type="submit" class="newsletter-submit">{% if current_lang == 'en' %}Subscribe{% else %}Iscriviti{% endif %}</button>
+          <span id="newsletter-error" hidden></span>
+        </form>
+      </div>
+
       <p>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</p>
       {% include translation-links.html %}
       {% if translation_source %}
@@ -182,6 +198,56 @@
     }
 
     // Check saved theme
+    // ── Newsletter form ──────────────────────────────────────────────────────
+    (function () {
+      const form = document.getElementById('newsletter-form');
+      const langInput = document.getElementById('newsletter-lang');
+      const radios = form.querySelectorAll('input[name="lang-display"]');
+      const errorEl = document.getElementById('newsletter-error');
+      const subscribedEl = document.getElementById('newsletter-subscribed');
+
+      // Sync hidden lang field with radio buttons
+      radios.forEach(function (r) {
+        r.addEventListener('change', function () { langInput.value = r.value; });
+      });
+
+      // Show success message if redirected back after confirmation
+      if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
+        form.hidden = true;
+        subscribedEl.hidden = false;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email').value;
+        const lang = langInput.value;
+        errorEl.hidden = true;
+
+        fetch('https://matteopetrani.matteo-petrani.workers.dev/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, lang: lang }),
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.ok) {
+              form.hidden = true;
+              subscribedEl.hidden = false;
+              subscribedEl.textContent = lang === 'en'
+                ? 'Check your inbox to confirm.'
+                : 'Controlla la tua inbox per confermare.';
+            } else {
+              errorEl.textContent = data.error || 'Error';
+              errorEl.hidden = false;
+            }
+          })
+          .catch(function () {
+            errorEl.textContent = lang === 'en' ? 'Network error.' : 'Errore di rete.';
+            errorEl.hidden = false;
+          });
+      });
+    })();
+
     const storedTheme = localStorage.getItem('theme');
     const initialTheme = storedTheme === 'mono' ? 'mono' : 'serif';
     setTheme(initialTheme);

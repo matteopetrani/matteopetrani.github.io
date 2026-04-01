@@ -139,6 +139,69 @@ a:hover {
   color: var(--text-color);
 }
 
+/* Newsletter footer form */
+.newsletter-footer {
+  margin-bottom: 20px;
+}
+
+.newsletter-footer form {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.newsletter-footer input[type="email"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 2px 0;
+  width: 200px;
+}
+
+.newsletter-footer input[type="email"]::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.newsletter-lang-choice {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter-lang-choice label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.newsletter-submit {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.newsletter-submit:hover {
+  text-decoration-thickness: 2px;
+}
+
+#newsletter-error {
+  color: inherit;
+  opacity: 0.7;
+}
+
 /* Footer */
 .site-footer {
   margin-top: calc(var(--spacing-unit) * 2);

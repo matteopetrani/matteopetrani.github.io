@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 # Usage: called by .github/workflows/notify-email-on-new-post.yml
-# Env vars required:
-#   RESEND_API_KEY, RESEND_SEGMENT_ID_IT, RESEND_SEGMENT_ID_EN,
-#   HMAC_SECRET, SITE_BASE_URL, WORKER_BASE_URL, GITHUB_SHA,
-#   BEFORE_SHA (from github.event.before)
 set -e
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -27,112 +23,66 @@ url_encode() {
   python3 -c 'import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip()),end="")'
 }
 
-# Extract post body (everything after the second --- frontmatter delimiter)
+# Strip Jekyll frontmatter, return markdown body
 extract_body() {
   awk 'BEGIN{n=0} /^---/{n++; next} n>=2{print}' "$1"
 }
 
-# Convert markdown body to HTML using pandoc, then inline paragraph styles
-markdown_to_html() {
-  local file="$1"
-  extract_body "$file" \
-    | pandoc --from=markdown --to=html --no-highlight \
-    | python3 -c "
-import sys, re
-
-content = sys.stdin.read()
-
-# Inline styles for email compatibility
-content = re.sub(r'<p>', '<p style=\"margin:0 0 1.4em 0\">', content)
-content = re.sub(r'<h2>', '<h2 style=\"font-weight:400;font-size:1.3em;margin:2em 0 0.5em 0\">', content)
-content = re.sub(r'<h3>', '<h3 style=\"font-weight:400;font-size:1.1em;margin:1.5em 0 0.5em 0\">', content)
-content = re.sub(r'<a ', '<a style=\"color:#222222\" ', content)
-content = re.sub(r'<blockquote>', '<blockquote style=\"border-left:2px solid #ccc;margin:1.5em 0;padding:0 0 0 20px;color:#555\">', content)
-content = re.sub(r'<ul>', '<ul style=\"padding-left:1.5em;margin:0 0 1.4em 0\">', content)
-content = re.sub(r'<ol>', '<ol style=\"padding-left:1.5em;margin:0 0 1.4em 0\">', content)
-content = re.sub(r'<li>', '<li style=\"margin-bottom:0.4em\">', content)
-content = re.sub(r'<hr\s*/?>', '<hr style=\"border:none;border-top:1px solid #e0dbd3;margin:2em 0\">', content)
-print(content, end='')
-"
-}
-
+# Render full email HTML — all dynamic values passed via env vars
 build_email_html() {
-  local title="$1" date_str="$2" post_url="$3"
-  local body_html="$4" unsub_url="$5" unsub_label="$6"
+  extract_body "$1" \
+    | pandoc --from=markdown --to=html --no-highlight \
+    | EMAIL_TITLE="$2" EMAIL_DATE="$3" EMAIL_POST_URL="$4" \
+      EMAIL_UNSUB_URL="$5" EMAIL_UNSUB_LABEL="$6" \
+      python3 -c "
+import sys, os, re
 
-  python3 - "$title" "$date_str" "$post_url" "$body_html" "$unsub_url" "$unsub_label" << 'PYEOF'
-import sys
+title       = os.environ['EMAIL_TITLE']
+date_str    = os.environ['EMAIL_DATE']
+post_url    = os.environ['EMAIL_POST_URL']
+unsub_url   = os.environ['EMAIL_UNSUB_URL']
+unsub_label = os.environ['EMAIL_UNSUB_LABEL']
 
-title, date_str, post_url, body_html, unsub_url, unsub_label = sys.argv[1:]
+body = sys.stdin.read()
 
-print(f"""<!DOCTYPE html>
-<html lang="it">
+# Inline styles for email clients
+body = re.sub(r'<p>', '<p style=\"margin:0 0 1.4em 0\">', body)
+body = re.sub(r'<h2>', '<h2 style=\"font-weight:400;font-size:1.3em;margin:2em 0 0.5em 0\">', body)
+body = re.sub(r'<h3>', '<h3 style=\"font-weight:400;font-size:1.1em;margin:1.5em 0 0.5em 0\">', body)
+body = re.sub(r'<a ', '<a style=\"color:#222222\" ', body)
+body = re.sub(r'<blockquote>', '<blockquote style=\"border-left:2px solid #ccc;margin:1.5em 0;padding:0 0 0 20px;color:#555\">', body)
+body = re.sub(r'<ul>', '<ul style=\"padding-left:1.5em;margin:0 0 1.4em 0\">', body)
+body = re.sub(r'<ol>', '<ol style=\"padding-left:1.5em;margin:0 0 1.4em 0\">', body)
+body = re.sub(r'<li>', '<li style=\"margin-bottom:0.4em\">', body)
+body = re.sub(r'<hr\s*/?>', '<hr style=\"border:none;border-top:1px solid #e0dbd3;margin:2em 0\">', body)
+
+print('''<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<meta charset=\"utf-8\">
+<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap\" rel=\"stylesheet\">
 <style>
-  body {{
-    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
-    background: #ffffff;
-    color: #222222;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }}
-  .wrapper {{
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 48px 32px;
-  }}
-  .post-title {{
-    font-family: 'EB Garamond', Georgia, serif;
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 1.2;
-    margin: 0 0 12px 0;
-    color: #222222;
-  }}
-  .post-meta {{
-    font-size: 0.75em;
-    color: #888888;
-    margin: 0 0 2em 0;
-    font-family: monospace;
-  }}
-  .post-content a {{
-    color: #222222;
-  }}
-  .footer {{
-    margin-top: 3em;
-    padding-top: 1.5em;
-    border-top: 1px solid #e0dbd3;
-    font-size: 0.75em;
-    color: #999999;
-  }}
-  .footer a {{
-    color: #999999;
-  }}
+body{font-family:\"EB Garamond\",Georgia,\"Times New Roman\",serif;background:#ffffff;color:#222222;margin:0;padding:0;font-size:20px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrapper{max-width:600px;margin:0 auto;padding:48px 32px}
+h1{font-family:\"EB Garamond\",Georgia,serif;font-weight:400;font-size:2em;line-height:1.2;margin:0 0 12px 0;color:#222222}
+.meta{font-size:0.75em;color:#888888;margin:0 0 2em 0;font-family:monospace}
+.footer{margin-top:3em;padding-top:1.5em;border-top:1px solid #e0dbd3;font-size:0.75em;color:#999999}
+.footer a{color:#999999}
 </style>
 </head>
 <body>
-<div class="wrapper">
-  <h1 class="post-title">{title}</h1>
-  <p class="post-meta">{date_str}</p>
-  <div class="post-content">
-    {body_html}
-  </div>
-  <div class="footer">
-    <a href="{unsub_url}">{unsub_label}</a>
-  </div>
+<div class=\"wrapper\">
+  <h1>''' + title + '''</h1>
+  <p class=\"meta\">''' + date_str + '''</p>
+  <div class=\"content\">''' + body + '''</div>
+  <div class=\"footer\"><a href=\"''' + unsub_url + '''\">''' + unsub_label + '''</a></div>
 </div>
 </body>
-</html>""")
-PYEOF
+</html>''')
+"
 }
 
 # ── detect new posts ───────────────────────────────────────────────────────────
@@ -183,7 +133,7 @@ for FILE in $CHANGED_POSTS; do
 
   echo "Processing: $FILE (lang=$LANG)"
 
-  BODY_HTML=$(markdown_to_html "$FILE")
+  HTML=$(build_email_html "$FILE" "$TITLE" "$DATE_STR" "$POST_URL" "UNSUB_PLACEHOLDER" "$UNSUB_LABEL")
 
   # ── fetch subscribers ────────────────────────────────────────────────────────
 
@@ -205,13 +155,14 @@ for FILE in $CHANGED_POSTS; do
     TOKEN=$(make_unsub_token "$EMAIL" "$LANG")
     UNSUB_URL="${WORKER_BASE_URL%/}/unsubscribe?token=$(printf '%s' "$TOKEN" | url_encode)"
 
-    HTML=$(build_email_html "$TITLE" "$DATE_STR" "$POST_URL" "$BODY_HTML" "$UNSUB_URL" "$UNSUB_LABEL")
+    # Inject per-subscriber unsubscribe URL
+    FINAL_HTML="${HTML/UNSUB_PLACEHOLDER/$UNSUB_URL}"
 
     PAYLOAD=$(jq -n \
       --arg from "Matteo Petrani <newsletter@matteopetrani.com>" \
       --arg to "$EMAIL" \
       --arg subject "$TITLE" \
-      --arg html "$HTML" \
+      --arg html "$FINAL_HTML" \
       --arg unsub "<${UNSUB_URL}>" \
       '{from: $from, to: [$to], subject: $subject, html: $html,
         headers: {"List-Unsubscribe": $unsub}}')

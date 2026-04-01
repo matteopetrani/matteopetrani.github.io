@@ -82,6 +82,7 @@
         <p id="newsletter-subscribed" hidden>{% if current_lang == 'en' %}You're subscribed.{% else %}Sei iscritto.{% endif %}</p>
         <form id="newsletter-form">
           <input type="hidden" name="lang" id="newsletter-lang" value="{{ current_lang }}">
+          <input type="text" name="website" id="newsletter-hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none">
           <input type="email" name="email" id="newsletter-email" required
             placeholder="{% if current_lang == 'en' %}your@email.com{% else %}tua@email.com{% endif %}">
 <button type="submit" class="newsletter-submit">{% if current_lang == 'en' %}Subscribe{% else %}Iscriviti{% endif %}</button>
@@ -213,12 +214,13 @@
         e.preventDefault();
         const email = document.getElementById('newsletter-email').value;
         const lang = langInput.value;
+        const hp = document.getElementById('newsletter-hp').value;
         errorEl.hidden = true;
 
         fetch('https://matteopetrani.matteo-petrani.workers.dev/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, lang: lang }),
+          body: JSON.stringify({ email: email, lang: lang, website: hp }),
         })
           .then(function (res) { return res.json(); })
           .then(function (data) {

@@ -123,7 +123,8 @@ async function handleSubscribe(request, env) {
     return json({ error: 'Invalid JSON' }, 400, origin);
   }
 
-  const { email, lang } = body;
+  const { email, lang, website } = body;
+  if (website) return json({ ok: true }, 200, origin); // honeypot
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json({ error: 'Invalid email' }, 400, origin);
   }

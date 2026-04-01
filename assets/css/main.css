@@ -399,6 +399,7 @@ img {
 [data-theme="mono"] .site-title {
   border-bottom: none;
   text-decoration: none;
+  font-family: 'MonaspaceArgon', monospace;
 }
 
 [data-theme="mono"] .post-meta {
@@ -407,7 +408,7 @@ img {
 }
 
 [data-theme="mono"] .site-nav a {
-  font-family: 'MonaspaceXenon', monospace;
+  font-family: 'MonaspaceArgon', monospace;
 }
 
 @media (prefers-color-scheme: dark) {

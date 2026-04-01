@@ -17,6 +17,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install dependencies
+        run: pip install markdown
+
       - name: Send emails for new posts
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}

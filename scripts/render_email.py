@@ -7,8 +7,7 @@ Outputs HTML to stdout.
 import sys
 import os
 import re
-import subprocess
-import tempfile
+import markdown as md_lib
 
 def strip_frontmatter(text):
     """Return the body of a Jekyll post, stripping YAML frontmatter."""
@@ -32,17 +31,7 @@ def get_frontmatter_value(text, key):
     return ''
 
 def markdown_to_html(markdown_text):
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as f:
-        f.write(markdown_text)
-        tmp_path = f.name
-    try:
-        result = subprocess.run(
-            ['pandoc', '--from=markdown', '--to=html', '--no-highlight', tmp_path],
-            capture_output=True, text=True, check=True
-        )
-        return result.stdout
-    finally:
-        os.unlink(tmp_path)
+    return md_lib.markdown(markdown_text, extensions=['extra'])
 
 def inline_styles(html):
     html = re.sub(r'<p>',          r'<p style="margin:0 0 1.4em 0">',                                                              html)

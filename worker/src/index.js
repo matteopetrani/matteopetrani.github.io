@@ -57,7 +57,7 @@ async function verifySignedToken(env, token) {
 // ── Resend API helpers ────────────────────────────────────────────────────────
 
 function audienceId(env, lang) {
-  return lang === 'en' ? env.RESEND_AUDIENCE_ID_EN : env.RESEND_AUDIENCE_ID_IT;
+  return lang === 'en' ? env.RESEND_SEGMENT_ID_EN : env.RESEND_SEGMENT_ID_IT;
 }
 
 async function resendRequest(env, method, path, body) {
@@ -197,7 +197,7 @@ async function handleUnsubscribe(request, env) {
   const { email, lang } = data;
 
   // Remove from both audiences (in case lang was wrong or changed)
-  for (const aid of [env.RESEND_AUDIENCE_ID_IT, env.RESEND_AUDIENCE_ID_EN]) {
+  for (const aid of [env.RESEND_SEGMENT_ID_IT, env.RESEND_SEGMENT_ID_EN]) {
     const contact = await findContact(env, aid, email);
     if (contact) {
       await resendRequest(env, 'DELETE', `/audiences/${aid}/contacts/${contact.id}`);

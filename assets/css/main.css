@@ -168,17 +168,6 @@ a:hover {
   opacity: 0.5;
 }
 
-.newsletter-lang-choice {
-  display: flex;
-  gap: 10px;
-}
-
-.newsletter-lang-choice label {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-}
 
 .newsletter-submit {
   background: none;
@@ -392,7 +381,8 @@ img {
 }
 
 .language-switcher a,
-.language-switcher span {
+.language-switcher span,
+.language-switcher button {
   background: none;
   border: none;
   padding: 0;

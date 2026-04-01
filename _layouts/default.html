@@ -84,9 +84,10 @@
           <input type="hidden" name="lang" id="newsletter-lang" value="{{ current_lang }}">
           <input type="email" name="email" id="newsletter-email" required
             placeholder="{% if current_lang == 'en' %}your@email.com{% else %}tua@email.com{% endif %}">
-          <div class="newsletter-lang-choice">
-            <label><input type="radio" name="lang-display" value="it" {% if current_lang != 'en' %}checked{% endif %}> it</label>
-            <label><input type="radio" name="lang-display" value="en" {% if current_lang == 'en' %}checked{% endif %}> en</label>
+          <div class="newsletter-lang-choice language-switcher">
+            <button type="button" class="nl-lang{% if current_lang != 'en' %} active disabled{% endif %}" data-lang="it">it</button>
+            |
+            <button type="button" class="nl-lang{% if current_lang == 'en' %} active disabled{% endif %}" data-lang="en">en</button>
           </div>
           <button type="submit" class="newsletter-submit">{% if current_lang == 'en' %}Subscribe{% else %}Iscriviti{% endif %}</button>
           <span id="newsletter-error" hidden></span>
@@ -206,9 +207,14 @@
       const errorEl = document.getElementById('newsletter-error');
       const subscribedEl = document.getElementById('newsletter-subscribed');
 
-      // Sync hidden lang field with radio buttons
-      radios.forEach(function (r) {
-        r.addEventListener('change', function () { langInput.value = r.value; });
+      // Sync hidden lang field with lang buttons
+      var langBtns = form.querySelectorAll('.nl-lang');
+      langBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          langBtns.forEach(function (b) { b.classList.remove('active', 'disabled'); });
+          btn.classList.add('active', 'disabled');
+          langInput.value = btn.dataset.lang;
+        });
       });
 
       // Show success message if redirected back after confirmation

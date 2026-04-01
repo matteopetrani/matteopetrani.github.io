@@ -59,13 +59,10 @@ def render(post_file, post_url, unsub_url, unsub_label):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-body{{font-family:"EB Garamond",Georgia,"Times New Roman",serif;background:#ffffff;color:#222222;margin:0;padding:0;font-size:20px;line-height:1.7;-webkit-font-smoothing:antialiased}}
+body{{font-family:Georgia,"Times New Roman",Times,serif;background:#ffffff;color:#222222;margin:0;padding:0;font-size:20px;line-height:1.7}}
 .wrapper{{max-width:600px;margin:0 auto;padding:48px 32px}}
-h1{{font-family:"EB Garamond",Georgia,serif;font-weight:400;font-size:2em;line-height:1.2;margin:0 0 12px 0;color:#222222}}
+h1{{font-family:Georgia,"Times New Roman",Times,serif;font-weight:400;font-size:2em;line-height:1.2;margin:0 0 12px 0;color:#222222}}
 .meta{{font-size:0.75em;color:#888888;margin:0 0 2em 0;font-family:monospace}}
 .footer{{margin-top:3em;padding-top:1.5em;border-top:1px solid #e0dbd3;font-size:0.75em;color:#999999}}
 .footer a{{color:#999999}}

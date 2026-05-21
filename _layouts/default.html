@@ -40,6 +40,7 @@
       opt_out_capturing_by_default: true,
       persistence: 'localStorage',
       autocapture: true,
+      capture_exceptions: true,
       bootstrap: _phBootstrapFlags ? { featureFlags: _phBootstrapFlags } : undefined,
       loaded: function (ph) {
         if (_phBootstrapFlags) {
@@ -51,6 +52,7 @@
     // Restore consent if already given
     if (localStorage.getItem('cookie_consent') === 'accepted') {
       posthog.opt_in_capturing();
+      posthog.startSessionRecording();
     }
   </script>
   <!-- End PostHog -->
@@ -142,6 +144,7 @@
       document.getElementById('cookie-accept').addEventListener('click', function () {
         localStorage.setItem('cookie_consent', 'accepted');
         posthog.opt_in_capturing();
+        posthog.startSessionRecording();
         banner.style.display = 'none';
       });
 

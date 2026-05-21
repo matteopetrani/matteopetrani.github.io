@@ -1,6 +1,37 @@
 ---
 layout: default
 ---
+<script>
+  (function () {
+    var thresholds = [25, 50, 75, 100];
+    var fired = {};
+    var startTime = Date.now();
+    var postProps = {
+      post_title: '{{ page.title | escape | replace: "'", "\'" }}',
+      post_lang: '{{ page.lang | default: "it" }}',
+      page_path: window.location.pathname,
+    };
+
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+      var pct = Math.round(scrollTop / docHeight * 100);
+      thresholds.forEach(function (t) {
+        if (!fired[t] && pct >= t) {
+          fired[t] = true;
+          posthog.capture('scroll_depth', Object.assign({ depth_pct: t }, postProps));
+        }
+      });
+    }, { passive: true });
+
+    window.addEventListener('beforeunload', function () {
+      var seconds = Math.round((Date.now() - startTime) / 1000);
+      posthog.capture('reading_time', Object.assign({ seconds: seconds }, postProps));
+    });
+  })();
+</script>
+
 <article class="post">
 
     <header class="post-header">

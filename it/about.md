@@ -4,7 +4,7 @@ title: About
 permalink: /it/about/
 lang: it
 ---
-*[Cerchi il mio cv?](https://www.linkedin.com/in/matteopetrani/)*
+*[Cerchi il mio cv?](https://www.linkedin.com/in/matteopetrani/){: data-ph-capture-attribute-cta-name="linkedin_profile" data-ph-capture-attribute-cta-position="about_page" }*
 
 -
 

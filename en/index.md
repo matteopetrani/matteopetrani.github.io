@@ -4,7 +4,7 @@ title: Home
 lang: en
 original: index.md
 ---
-[Product designer, CRO specialist](https://www.linkedin.com/in/matteopetrani/) & Noah's father.
+[Product designer, CRO specialist](https://www.linkedin.com/in/matteopetrani/){: data-ph-capture-attribute-cta-name="linkedin_profile" data-ph-capture-attribute-cta-position="bio" } & Noah's father.
 
 I am a designer with over 14 years of experience in transforming a vision into concrete results, working on SaaS platforms, ecommerce and digital services. Specialized in **CRO** and **systemic design**, I combine the rigor of engineering with attention to detail, edge cases and the "why" that guides every design choice.
 
@@ -12,4 +12,4 @@ After experiences in [H-Farm](https://www.h-farm.com/it) and [Sketchin](https://
 
 I believe in a holistic approach that integrates people, business and technology. I collaborate only when there is a good fit, with clear, essential and measurable results-oriented processes. I am mainly interested in generating real and demonstrable impact.
 
-**I'm always open to a chat to understand your company's needs: [book here](https://cal.com/matpet).**
+**I'm always open to a chat to understand your company's needs: [book here](https://cal.com/matpet){: data-ph-capture-attribute-cta-name="book_chat" data-ph-capture-attribute-cta-position="bio" }.**

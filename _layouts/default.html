@@ -81,7 +81,7 @@
 
       <div class="newsletter-footer">
         <p id="newsletter-subscribed" hidden>{% if current_lang == 'en' %}You're subscribed.{% else %}Sei iscritto.{% endif %}</p>
-        <form id="newsletter-form">
+        <form id="newsletter-form" data-ph-capture-attribute-cta-name="newsletter_subscribe" data-ph-capture-attribute-cta-position="footer">
           <input type="hidden" name="lang" id="newsletter-lang" value="{{ current_lang }}">
           <input type="text" name="website" id="newsletter-hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none">
           <input type="email" name="email" id="newsletter-email" required
@@ -167,11 +167,16 @@
 
         var isExternal = /^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1;
         if (isExternal) {
-          posthog.capture('outbound_click', {
+          var props = {
             href: href,
             text: link.innerText.trim().slice(0, 100),
             page_lang: document.documentElement.lang,
-          });
+          };
+          var ctaName = link.getAttribute('data-ph-capture-attribute-cta-name');
+          var ctaPos = link.getAttribute('data-ph-capture-attribute-cta-position');
+          if (ctaName) props.cta_name = ctaName;
+          if (ctaPos) props.cta_position = ctaPos;
+          posthog.capture('outbound_click', props);
         }
       });
     });
@@ -231,6 +236,10 @@
               subscribedEl.textContent = lang === 'en'
                 ? 'Check your inbox to confirm.'
                 : 'Controlla la tua inbox per confermare.';
+              posthog.capture('newsletter_subscribe', {
+                page_lang: lang,
+                page_path: window.location.pathname
+              });
             } else {
               errorEl.textContent = data.error || 'Error';
               errorEl.hidden = false;

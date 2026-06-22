@@ -168,7 +168,7 @@ a:hover {
 }
 
 .newsletter-footer input[type="email"]::placeholder {
-  color: #666666;
+  color: var(--footer-color);
   opacity: 1;
 }
 
@@ -202,9 +202,8 @@ a:hover {
   margin-top: calc(var(--spacing-unit) * 2);
   padding-bottom: var(--spacing-unit);
   font-size: 0.9em;
-  color: #666666;
-  border-top: 1px solid #666666;
-  opacity: 0.5;
+  color: var(--footer-color);
+  border-top: 1px solid var(--footer-color);
 }
 
 /* Posts List */
@@ -353,7 +352,7 @@ img {
   margin-top: 10px;
   font-family: monospace;
   font-size: 0.7em;
-  color: var(--text-color);
+  color: var(--footer-color);
 }
 
 .theme-btn {
@@ -383,7 +382,7 @@ img {
   margin-bottom: 10px;
   font-family: monospace;
   font-size: 0.7em;
-  color: var(--text-color);
+  color: var(--footer-color);
 }
 
 .language-switcher a,

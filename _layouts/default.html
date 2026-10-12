@@ -89,10 +89,10 @@
         <form id="newsletter-form" data-ph-capture-attribute-cta-name="newsletter_subscribe" data-ph-capture-attribute-cta-position="footer">
           <input type="hidden" name="lang" id="newsletter-lang" value="{{ current_lang }}">
           <input type="text" name="website" id="newsletter-hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none">
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFUYIgxOp0xt4ECj" data-theme="auto" data-language="{{ current_lang }}"></div>
           <input type="email" name="email" id="newsletter-email" required
             placeholder="{% if current_lang == 'en' %}your@email.com{% else %}tua@email.com{% endif %}">
 <button type="submit" class="newsletter-submit">{% if current_lang == 'en' %}Subscribe{% else %}Iscriviti{% endif %}</button>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFUYIgxOp0xt4ECj" data-theme="auto" data-language="{{ current_lang }}"></div>
           <span id="newsletter-error" hidden></span>
         </form>
       </div>

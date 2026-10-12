@@ -152,6 +152,10 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.newsletter-footer .cf-turnstile {
+  flex-basis: 100%;
+}
+
 .newsletter-footer input[type="email"] {
   -webkit-appearance: none;
   appearance: none;

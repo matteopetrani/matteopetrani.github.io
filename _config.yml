@@ -3,8 +3,14 @@ email: matteo.petrani@gmail.com
 description: >-
   Writings and about.
 baseurl: ""
-url: ""
+url: "https://matteopetrani.com"
 permalink: /:year/:month/:day/:title/
+
+author:
+  name: "Matteo Petrani"
+  url: "https://matteopetrani.com"
+  sameAs:
+    - "https://www.linkedin.com/in/matteopetrani/"
 
 markdown: kramdown
 theme: null

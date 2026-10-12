@@ -123,7 +123,7 @@ async function handleSubscribe(request, env) {
     return json({ error: 'Invalid JSON' }, 400, origin);
   }
 
-  const { email, lang, website } = body;
+  const { email, lang, website, turnstile } = body;
   if (website) return json({ ok: true }, 200, origin); // honeypot
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json({ error: 'Invalid email' }, 400, origin);
@@ -131,6 +131,16 @@ async function handleSubscribe(request, env) {
   if (lang !== 'it' && lang !== 'en') {
     return json({ error: 'Invalid lang' }, 400, origin);
   }
+
+  const ts = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    body: new URLSearchParams({
+      secret: env.TURNSTILE_SECRET,
+      response: turnstile || '',
+      remoteip: request.headers.get('CF-Connecting-IP') || '',
+    }),
+  }).then(r => r.json()).catch(() => ({}));
+  if (!ts.success) return json({ error: 'Captcha failed' }, 400, origin);
 
   const aid = audienceId(env, lang);
 

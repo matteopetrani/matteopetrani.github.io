@@ -8,6 +8,8 @@
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
   <meta name="description"
     content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  {% include og-meta.html %}
+  {% include json-ld.html %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -56,6 +58,7 @@
     }
   </script>
   <!-- End PostHog -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -86,6 +89,7 @@
         <form id="newsletter-form" data-ph-capture-attribute-cta-name="newsletter_subscribe" data-ph-capture-attribute-cta-position="footer">
           <input type="hidden" name="lang" id="newsletter-lang" value="{{ current_lang }}">
           <input type="text" name="website" id="newsletter-hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFUYIgxOp0xt4ECj" data-theme="auto" data-language="{{ current_lang }}"></div>
           <input type="email" name="email" id="newsletter-email" required
             placeholder="{% if current_lang == 'en' %}your@email.com{% else %}tua@email.com{% endif %}">
 <button type="submit" class="newsletter-submit">{% if current_lang == 'en' %}Subscribe{% else %}Iscriviti{% endif %}</button>
@@ -229,7 +233,7 @@
         fetch('https://matteopetrani.matteo-petrani.workers.dev/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, lang: lang, website: hp }),
+          body: JSON.stringify({ email: email, lang: lang, website: hp, turnstile: new FormData(form).get('cf-turnstile-response') }),
         })
           .then(function (res) { return res.json(); })
           .then(function (data) {
@@ -246,6 +250,7 @@
             } else {
               errorEl.textContent = data.error || 'Error';
               errorEl.hidden = false;
+              if (window.turnstile) turnstile.reset();
             }
           })
           .catch(function () {
